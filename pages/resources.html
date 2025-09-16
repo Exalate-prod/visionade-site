@@ -42,16 +42,29 @@
         }
 
         .resource-nav-links a {
-            padding: 8px 16px;
+            padding: 12px 20px;
             border-radius: var(--radius-sm);
             font-weight: 500;
             transition: all 0.2s ease;
+            color: var(--secondary-color);
+            border: 1px solid transparent;
+            background: transparent;
+            min-width: 100px;
+            text-align: center;
         }
 
-        .resource-nav-links a.active,
+        .resource-nav-links a.active {
+            background: rgba(255, 229, 40, 0.2);
+            color: var(--dark-color);
+            font-weight: 700;
+            border-color: var(--secondary-color);
+        }
+
         .resource-nav-links a:hover {
-            background: var(--primary-color);
-            color: white;
+            background: rgba(47, 55, 46, 0.05);
+            color: var(--dark-color);
+            font-weight: 600;
+            border-color: rgba(47, 55, 46, 0.1);
         }
 
         .resource-section {
@@ -336,7 +349,7 @@
                 <li><a href="benefits.html">Benefits</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="documentation.html">Docs</a></li>
-                <li><a href="resources.html" style="color: var(--primary-color); font-weight: 600;">Resources</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
         </nav>
@@ -470,7 +483,7 @@
                     <div class="blog-image">📊</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Dec 15, 2024</span>
+                            <span>Sep 15, 2025</span>
                             <span>•</span>
                             <span>Analytics</span>
                         </div>
@@ -484,7 +497,7 @@
                     <div class="blog-image">💰</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Dec 10, 2024</span>
+                            <span>Sep 10, 2025</span>
                             <span>•</span>
                             <span>ROI</span>
                         </div>
@@ -498,7 +511,7 @@
                     <div class="blog-image">🎯</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Dec 5, 2024</span>
+                            <span>Sep 5, 2025</span>
                             <span>•</span>
                             <span>Strategy</span>
                         </div>
@@ -512,7 +525,7 @@
                     <div class="blog-image">🔗</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Nov 28, 2024</span>
+                            <span>Aug 28, 2025</span>
                             <span>•</span>
                             <span>Integration</span>
                         </div>
@@ -526,7 +539,7 @@
                     <div class="blog-image">📈</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Nov 20, 2024</span>
+                            <span>Aug 20, 2025</span>
                             <span>•</span>
                             <span>Best Practices</span>
                         </div>
@@ -540,7 +553,7 @@
                     <div class="blog-image">🚀</div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>Nov 15, 2024</span>
+                            <span>Aug 15, 2025</span>
                             <span>•</span>
                             <span>Case Study</span>
                         </div>
@@ -613,7 +626,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
+    <section style="padding: 64px 0; background: var(--secondary-color); text-align: center; color: white;">
         <div class="container">
             <h2 style="color: white; margin-bottom: 16px;">Data Stirred. Not Scrambled.</h2>
             <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start creating custom Jira reports and dashboards today.</p>
@@ -663,7 +676,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Visionade by Exalate. All rights reserved.</p>
+                <p>&copy; 2025 Visionade by Exalate. All rights reserved.</p>
             </div>
         </div>
     </footer>

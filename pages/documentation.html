@@ -74,16 +74,29 @@
         }
 
         .docs-nav-links a {
-            padding: 8px 16px;
+            padding: 12px 20px;
             border-radius: var(--radius-sm);
             font-weight: 500;
             transition: all 0.2s ease;
+            color: var(--secondary-color);
+            border: 1px solid transparent;
+            background: transparent;
+            min-width: 100px;
+            text-align: center;
         }
 
-        .docs-nav-links a.active,
+        .docs-nav-links a.active {
+            background: rgba(255, 229, 40, 0.2);
+            color: var(--dark-color);
+            font-weight: 700;
+            border-color: var(--secondary-color);
+        }
+
         .docs-nav-links a:hover {
-            background: var(--primary-color);
-            color: white;
+            background: rgba(47, 55, 46, 0.05);
+            color: var(--dark-color);
+            font-weight: 600;
+            border-color: rgba(47, 55, 46, 0.1);
         }
 
         .docs-content {
@@ -118,15 +131,23 @@
         }
 
         .docs-sidebar a {
-            color: var(--text-medium);
+            color: #2f372e;
             font-size: 0.9rem;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            margin: 2px 0;
+            display: block;
         }
 
         .docs-sidebar a:hover,
         .docs-sidebar a.active {
-            color: var(--primary-color);
-            font-weight: 500;
+            color: #2f372e;
+            font-weight: 600;
+            background: rgba(255, 229, 40, 0.3);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            margin: 2px 0;
         }
 
         .docs-main {
@@ -209,10 +230,11 @@
 
         .warning-box {
             background: #fff3cd;
-            border: 1px solid #ffeaa7;
+            border: 1px solid #d4a000;
             border-radius: var(--radius-sm);
             padding: 16px;
             margin: 16px 0;
+            color: #664d00;
         }
 
         .warning-box::before {
@@ -266,7 +288,7 @@
                 <li><a href="how-it-works.html">How It Works</a></li>
                 <li><a href="benefits.html">Benefits</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="documentation.html" style="color: var(--primary-color); font-weight: 600;">Docs</a></li>
+                <li><a href="documentation.html" class="active">Docs</a></li>
                 <li><a href="resources.html">Resources</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
@@ -664,7 +686,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Visionade by Exalate. All rights reserved.</p>
+                <p>&copy; 2025 Visionade by Exalate. All rights reserved.</p>
             </div>
         </div>
     </footer>
