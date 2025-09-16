@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionade - Enterprise-Grade Jira Analytics Without the Complexity</title>
+    <meta name="description" content="Transform your Jira data into actionable insights in minutes, not days. No code, no SQL, just drag-and-drop simplicity. Start your free 30-day trial today.">
+    <meta name="keywords" content="Jira analytics, dashboard, reporting, no-code, Table Grid, business intelligence">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Visionade - Enterprise-Grade Jira Analytics Without the Complexity">
+    <meta property="og:description" content="Transform your Jira data into actionable insights in minutes, not days. No code, no SQL, just drag-and-drop simplicity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://visionade.com">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Visionade",
+        "description": "Enterprise-grade Jira analytics and visualization platform with no-code interface",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "49",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">Visionade</div>
+            <ul class="nav-links">
+                <li><a href="pages/how-it-works.html">How It Works</a></li>
+                <li><a href="pages/benefits.html">Benefits</a></li>
+                <li><a href="pages/pricing.html">Pricing</a></li>
+                <li><a href="pages/documentation.html">Docs</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Enterprise-Grade Jira Analytics Without the Complexity</h1>
+            <p class="subtitle">Transform your Jira data into actionable insights in minutes, not days. No code, no SQL, just drag-and-drop simplicity.</p>
+
+            <div class="hero-cta">
+                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                    Start Free 30-Day Trial
+                </a>
+                <button class="btn btn-secondary btn-lg" onclick="playDemo()">
+                    Watch 2-Minute Demo
+                </button>
+            </div>
+
+            <div class="trust-indicator">
+                🛡️ Backed by Exalate (2,500+ customers)
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-props">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Teams Choose Visionade</h2>
+                <p>Eliminate the pain of manual reporting and empower your entire team with self-service analytics</p>
+            </div>
+
+            <div class="value-props-grid">
+                <div class="value-prop">
+                    <div class="value-prop-icon">⏰</div>
+                    <h3>Save 10+ Hours Weekly</h3>
+                    <p>Eliminate manual Excel reports with automated, real-time dashboards that update as your data changes.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-prop-icon">👥</div>
+                    <h3>Empower Your Entire Team</h3>
+                    <p>No-code interface means everyone can create insights, not just analysts. Democratize data across your organization.</p>
+                </div>
+
+                <div class="value-prop">
+                    <div class="value-prop-icon">📊</div>
+                    <h3>See the Complete Picture</h3>
+                    <p>Aggregate data from multiple Jira projects and Table Grid tables instantly for comprehensive reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Try Visionade Yourself</h2>
+                <p>Experience the power of no-code analytics with our interactive demo</p>
+            </div>
+
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <button class="demo-btn active" onclick="showChart('bar')">Bar Chart</button>
+                    <button class="demo-btn" onclick="showChart('pie')">Pie Chart</button>
+                    <button class="demo-btn" onclick="showChart('line')">Line Chart</button>
+                    <button class="demo-btn" onclick="showChart('column')">Column Chart</button>
+                </div>
+
+                <div class="demo-area" id="demoArea">
+                    <div class="demo-placeholder">
+                        <p>📊 Interactive Dashboard Demo</p>
+                        <p>Drag and drop fields to create charts instantly</p>
+                        <p><em>Click the buttons above to see different chart types</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need for Powerful Analytics</h2>
+                <p>Six key features that make Visionade the perfect choice for your team</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>🔗 Table Grid Integration</h4>
+                    <p>Unique integration with Table Grid for enhanced data visualization and reporting capabilities that no other tool offers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🏢 Multi-Project Aggregation</h4>
+                    <p>Combine data from multiple Jira projects into single, comprehensive reports for organization-wide insights.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🔄 Real-Time Updates</h4>
+                    <p>Your dashboards automatically refresh with the latest data, ensuring you always have current information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🖱️ No-Code Interface</h4>
+                    <p>Intuitive drag-and-drop interface that anyone can use, regardless of technical background or SQL knowledge.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📤 Export Capabilities</h4>
+                    <p>Export your reports and dashboards in multiple formats including PDF, Excel, and high-resolution images.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>🧮 Custom Calculations</h4>
+                    <p>Create complex calculations and formulas without writing code using our built-in calculation engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Customer Success -->
+    <section class="social-proof" style="padding: 64px 0; text-align: center;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Development Teams Worldwide</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-top: 32px;">
+                <div style="padding: 24px;">
+                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 8px;">10+</div>
+                    <p style="font-weight: 600;">Hours Saved Weekly</p>
+                </div>
+                <div style="padding: 24px;">
+                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 8px;">60%</div>
+                    <p style="font-weight: 600;">Faster Decision Making</p>
+                </div>
+                <div style="padding: 24px;">
+                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 8px;">3x</div>
+                    <p style="font-weight: 600;">Increase in Report Usage</p>
+                </div>
+                <div style="padding: 24px;">
+                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 8px;">0</div>
+                    <p style="font-weight: 600;">Training Required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 16px;">Ready to Transform Your Jira Analytics?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Join thousands of teams already using Visionade to make data-driven decisions faster.</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
+                    Start Free Trial - No Credit Card Required
+                </a>
+                <a href="pages/how-it-works.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                    Learn How It Works
+                </a>
+            </div>
+
+            <p style="margin-top: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                ✓ 30-day free trial &nbsp;&nbsp; ✓ Cancel anytime &nbsp;&nbsp; ✓ Free migration assistance
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="pages/how-it-works.html">How It Works</a>
+                    <a href="pages/benefits.html">Benefits</a>
+                    <a href="pages/pricing.html">Pricing</a>
+                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="pages/documentation.html">Documentation</a>
+                    <a href="pages/resources.html">Templates</a>
+                    <a href="pages/resources.html#blog">Blog</a>
+                    <a href="pages/resources.html#webinars">Webinars</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="pages/documentation.html#quickstart">Quick Start</a>
+                    <a href="pages/documentation.html#troubleshooting">Help Center</a>
+                    <a href="mailto:support@visionade.com">Contact Support</a>
+                    <a href="pages/resources.html#community">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Video Modal -->
+    <div id="demoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 24px; border-radius: 8px; max-width: 800px; width: 90%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h3>Visionade Demo</h3>
+                <button onclick="closeDemoModal()" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+            </div>
+            <div style="aspect-ratio: 16/9; background: #f4f5f7; display: flex; align-items: center; justify-content: center; border-radius: 4px;">
+                <p style="color: #5e6c84;">🎥 Demo Video Placeholder</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/analytics.js"></script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        // Replace GA_MEASUREMENT_ID with actual measurement ID
+        // const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    </script>
+</body>
+</html>

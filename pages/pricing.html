@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Visionade | Simple, Transparent Pricing for Every Team</title>
+    <meta name="description" content="Choose the perfect Visionade plan for your team. Start with our free 30-day trial - no credit card required. Cancel anytime.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        .pricing-hero {
+            padding: 64px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 64px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, #fff 0%, #f8faff 100%);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-tier {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .pricing-period {
+            color: var(--text-medium);
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .faq-section {
+            padding: 64px 0;
+            background: var(--bg-light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .trial-banner {
+            background: var(--secondary-color);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .trial-features {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .trial-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin: 32px 0;
+            }
+
+            .trial-features {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="pricing.html" style="color: var(--primary-color); font-weight: 600;">Pricing</a></li>
+                <li><a href="documentation.html">Docs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="subtitle">Choose the perfect plan for your team size and needs. All plans include our core features with no hidden fees.</p>
+        </div>
+    </section>
+
+    <!-- Free Trial Banner -->
+    <section class="trial-banner">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 16px;">Start Your Free 30-Day Trial Today</h2>
+            <div class="trial-features">
+                <div class="trial-feature">
+                    <span>✓</span>
+                    <span>No credit card required</span>
+                </div>
+                <div class="trial-feature">
+                    <span>✓</span>
+                    <span>Cancel anytime, no questions asked</span>
+                </div>
+                <div class="trial-feature">
+                    <span>✓</span>
+                    <span>Free migration assistance included</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Grid -->
+    <section style="padding: 64px 0;">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Starter</div>
+                    <div class="pricing-price">$49</div>
+                    <div class="pricing-period">per month</div>
+                    <p style="margin-bottom: 24px; color: var(--text-medium);">Perfect for small teams getting started with analytics</p>
+
+                    <ul class="pricing-features">
+                        <li>Up to 10 users</li>
+                        <li>All chart types included</li>
+                        <li>5 dashboards maximum</li>
+                        <li>Table Grid integration</li>
+                        <li>Export to PDF, Excel, images</li>
+                        <li>Email support</li>
+                        <li>Basic custom calculations</li>
+                    </ul>
+
+                    <a href="https://marketplace.atlassian.com/apps/visionade" class="btn btn-secondary" style="width: 100%;" target="_blank">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">Professional</div>
+                    <div class="pricing-price">$199</div>
+                    <div class="pricing-period">per month</div>
+                    <p style="margin-bottom: 24px; color: var(--text-medium);">Best for growing teams that need advanced features</p>
+
+                    <ul class="pricing-features">
+                        <li>Up to 100 users</li>
+                        <li>Unlimited dashboards</li>
+                        <li>Multi-project aggregation</li>
+                        <li>Advanced custom calculations</li>
+                        <li>Priority support</li>
+                        <li>API access (coming soon)</li>
+                        <li>Scheduled exports</li>
+                        <li>Team collaboration features</li>
+                    </ul>
+
+                    <a href="https://marketplace.atlassian.com/apps/visionade" class="btn btn-primary" style="width: 100%;" target="_blank">
+                        Start Free Trial
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-price" style="font-size: 2rem;">Custom</div>
+                    <div class="pricing-period">contact us</div>
+                    <p style="margin-bottom: 24px; color: var(--text-medium);">Tailored solutions for large organizations</p>
+
+                    <ul class="pricing-features">
+                        <li>Unlimited users</li>
+                        <li>SSO integration</li>
+                        <li>Dedicated support manager</li>
+                        <li>Custom training sessions</li>
+                        <li>Service Level Agreement (SLA)</li>
+                        <li>Advanced security features</li>
+                        <li>Custom integrations</li>
+                        <li>Priority feature requests</li>
+                    </ul>
+
+                    <a href="mailto:sales@visionade.com?subject=Enterprise%20Inquiry" class="btn btn-secondary" style="width: 100%;">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section style="padding: 64px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Feature Comparison</h2>
+                <p>See exactly what's included in each plan</p>
+            </div>
+
+            <div style="overflow-x: auto; margin-top: 32px;">
+                <table style="width: 100%; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: var(--bg-light);">
+                            <th style="padding: 16px; text-align: left; font-weight: 600;">Feature</th>
+                            <th style="padding: 16px; text-align: center; font-weight: 600;">Starter</th>
+                            <th style="padding: 16px; text-align: center; font-weight: 600; color: var(--primary-color);">Professional</th>
+                            <th style="padding: 16px; text-align: center; font-weight: 600;">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">Users</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Up to 10</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Up to 100</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">Dashboards</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">5</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Unlimited</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">Table Grid Integration</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">Multi-Project Reports</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">Limited</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">Priority Support</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">-</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px; border-top: 1px solid var(--border-light);">SSO Integration</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">-</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">-</td>
+                            <td style="padding: 16px; text-align: center; border-top: 1px solid var(--border-light);">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Visionade pricing</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">How does the free trial work?</div>
+                    <p>You get full access to all Professional plan features for 30 days. No credit card required to start, and you can cancel anytime during the trial period.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I change plans anytime?</div>
+                    <p>Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing differences.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <p>We accept all major credit cards through the Atlassian Marketplace. Enterprise customers can also pay by invoice.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is there a setup fee?</div>
+                    <p>No setup fees, ever. Our pricing is transparent with no hidden costs. Enterprise customers get free migration assistance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I need more than 100 users?</div>
+                    <p>Contact our sales team for Enterprise pricing. We offer volume discounts and can customize a plan for your organization.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I get a refund?</div>
+                    <p>Yes, we offer a 30-day money-back guarantee. If you're not satisfied, contact support for a full refund.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 16px;">Ready to Transform Your Jira Analytics?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Join thousands of teams already using Visionade to make data-driven decisions faster.</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
+                    Start Free Trial Now
+                </a>
+                <a href="mailto:sales@visionade.com?subject=Enterprise%20Inquiry" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                    Contact Sales
+                </a>
+            </div>
+
+            <p style="margin-top: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                Questions? Email us at <a href="mailto:sales@visionade.com" style="color: white; text-decoration: underline;">sales@visionade.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="benefits.html">Benefits</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="resources.html">Templates</a>
+                    <a href="resources.html#blog">Blog</a>
+                    <a href="resources.html#webinars">Webinars</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="documentation.html#quickstart">Quick Start</a>
+                    <a href="documentation.html#troubleshooting">Help Center</a>
+                    <a href="mailto:support@visionade.com">Contact Support</a>
+                    <a href="resources.html#community">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

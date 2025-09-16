@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Visionade | Quick Start Guide & Help Center</title>
+    <meta name="description" content="Get started with Visionade quickly. Step-by-step guides, tutorials, and comprehensive documentation for Jira analytics and visualization.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        .docs-hero {
+            padding: 64px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            text-align: center;
+        }
+
+        .docs-search {
+            max-width: 600px;
+            margin: 32px auto 0;
+            position: relative;
+        }
+
+        .docs-search input {
+            width: 100%;
+            padding: 16px 50px 16px 20px;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .docs-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .docs-search button {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-medium);
+        }
+
+        .docs-nav {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .docs-nav-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .docs-nav-links a {
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav-links a.active,
+        .docs-nav-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .docs-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 48px;
+            padding: 64px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .docs-sidebar {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            height: fit-content;
+            position: sticky;
+            top: 160px;
+        }
+
+        .docs-sidebar h4 {
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .docs-sidebar ul {
+            list-style: none;
+        }
+
+        .docs-sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .docs-sidebar a {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .docs-sidebar a:hover,
+        .docs-sidebar a.active {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .docs-main {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .docs-section {
+            display: none;
+        }
+
+        .docs-section.active {
+            display: block;
+        }
+
+        .docs-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .docs-section h3 {
+            color: var(--text-dark);
+            margin: 32px 0 16px;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            counter-increment: step-counter;
+            margin-bottom: 32px;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .step-item::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .code-block {
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 16px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .tip-box {
+            background: #e6f2ff;
+            border: 1px solid #b3d9ff;
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .tip-box::before {
+            content: "💡 ";
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .docs-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 32px 16px;
+            }
+
+            .docs-sidebar {
+                position: static;
+                order: 2;
+            }
+
+            .docs-main {
+                order: 1;
+                padding: 24px;
+            }
+
+            .docs-nav-links {
+                gap: 16px;
+            }
+
+            .step-item {
+                padding-left: 50px;
+            }
+
+            .step-item::before {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="documentation.html" style="color: var(--primary-color); font-weight: 600;">Docs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Documentation Hero -->
+    <section class="docs-hero">
+        <div class="container">
+            <h1>Documentation & Help Center</h1>
+            <p class="subtitle">Everything you need to get started with Visionade and master Jira analytics</p>
+
+            <div class="docs-search">
+                <input type="text" placeholder="Search documentation..." id="docsSearch">
+                <button type="button" onclick="searchDocs()">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <div class="docs-nav-links">
+                <a href="#quickstart" class="docs-nav-link active" onclick="showSection('quickstart')">Quick Start</a>
+                <a href="#features" class="docs-nav-link" onclick="showSection('features')">Features</a>
+                <a href="#integrations" class="docs-nav-link" onclick="showSection('integrations')">Integrations</a>
+                <a href="#troubleshooting" class="docs-nav-link" onclick="showSection('troubleshooting')">Troubleshooting</a>
+                <a href="#api" class="docs-nav-link" onclick="showSection('api')">API</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Documentation Content -->
+    <div class="container">
+        <div class="docs-content">
+            <!-- Sidebar -->
+            <aside class="docs-sidebar">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#installation" class="sidebar-link active">Installation</a></li>
+                    <li><a href="#first-dashboard">First Dashboard</a></li>
+                    <li><a href="#connecting-data">Connecting Data</a></li>
+                    <li><a href="#chart-types">Chart Types</a></li>
+                    <li><a href="#sharing">Sharing Dashboards</a></li>
+                    <li><a href="#table-grid">Table Grid Integration</a></li>
+                    <li><a href="#calculations">Custom Calculations</a></li>
+                    <li><a href="#exports">Exports & Reports</a></li>
+                    <li><a href="#common-issues">Common Issues</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="docs-main">
+                <!-- Quick Start Section -->
+                <section class="docs-section active" id="quickstart">
+                    <h2>Quick Start Guide</h2>
+                    <p>Get up and running with Visionade in under 10 minutes. Follow these simple steps to create your first dashboard.</p>
+
+                    <div class="step-list">
+                        <div class="step-item" id="installation">
+                            <h3>Install from Atlassian Marketplace</h3>
+                            <p>Installing Visionade is quick and easy through the Atlassian Marketplace:</p>
+                            <ol>
+                                <li>Go to your Jira instance administration</li>
+                                <li>Navigate to "Find new apps" in the left sidebar</li>
+                                <li>Search for "Visionade" in the marketplace</li>
+                                <li>Click "Install" and accept the permissions</li>
+                                <li>Wait for the installation to complete (usually under 30 seconds)</li>
+                            </ol>
+
+                            <div class="tip-box">
+                                <strong>Tip:</strong> You'll need Jira administrator permissions to install apps. If you don't have access, contact your Jira admin.
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="first-dashboard">
+                            <h3>Create Your First Dashboard</h3>
+                            <p>Once installed, you'll see Visionade in your Jira apps menu:</p>
+                            <ol>
+                                <li>Click on "Apps" in the top navigation</li>
+                                <li>Select "Visionade" from the dropdown</li>
+                                <li>Click "Create New Dashboard"</li>
+                                <li>Give your dashboard a name (e.g., "Sprint Overview")</li>
+                                <li>Choose your data source (Jira project or Table Grid)</li>
+                            </ol>
+
+                            <div class="code-block">
+                                Dashboard Name: "My First Dashboard"
+                                Data Source: "PROJECT-KEY" or Table Grid instance
+                                Template: Sprint Performance (recommended for beginners)
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="connecting-data">
+                            <h3>Connect Your Data Sources</h3>
+                            <p>Visionade can pull data from multiple sources:</p>
+                            <ul>
+                                <li><strong>Jira Projects:</strong> Select one or more projects to aggregate data</li>
+                                <li><strong>Table Grid:</strong> Connect to existing Table Grid instances</li>
+                                <li><strong>Custom JQL:</strong> Use advanced Jira Query Language for specific filters</li>
+                            </ul>
+
+                            <div class="warning-box">
+                                <strong>Important:</strong> Make sure you have view permissions for all projects you want to include in your dashboard.
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <h3>Add Your First Chart</h3>
+                            <p>Now for the fun part - creating visualizations:</p>
+                            <ol>
+                                <li>Click "Add Chart" in your dashboard</li>
+                                <li>Choose a chart type (Bar Chart is great for beginners)</li>
+                                <li>Drag "Issue Status" to the X-axis</li>
+                                <li>Drag "Issue Count" to the Y-axis</li>
+                                <li>Click "Apply" to generate your chart</li>
+                            </ol>
+
+                            <div class="tip-box">
+                                <strong>Pro Tip:</strong> Use the "Auto-suggest" feature to get recommended chart configurations based on your data.
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="sharing">
+                            <h3>Share Your Dashboard</h3>
+                            <p>Make your insights accessible to your team:</p>
+                            <ol>
+                                <li>Click the "Share" button in the top-right corner</li>
+                                <li>Choose sharing permissions (View or Edit)</li>
+                                <li>Add team members by email or Jira username</li>
+                                <li>Set up automatic email reports (optional)</li>
+                                <li>Generate a public link for external sharing</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="docs-section" id="features">
+                    <h2>Feature Documentation</h2>
+
+                    <h3 id="chart-types">Chart Types & Configurations</h3>
+                    <p>Visionade supports multiple chart types to visualize your data effectively:</p>
+
+                    <h4>Bar Charts</h4>
+                    <p>Perfect for comparing categories or showing distributions:</p>
+                    <ul>
+                        <li>Horizontal and vertical orientations</li>
+                        <li>Stacked and grouped options</li>
+                        <li>Custom color schemes</li>
+                    </ul>
+
+                    <h4>Line Charts</h4>
+                    <p>Ideal for showing trends over time:</p>
+                    <ul>
+                        <li>Single or multiple data series</li>
+                        <li>Smooth or stepped line styles</li>
+                        <li>Interactive data points</li>
+                    </ul>
+
+                    <h4>Pie Charts</h4>
+                    <p>Great for showing parts of a whole:</p>
+                    <ul>
+                        <li>Donut chart variations</li>
+                        <li>Exploded slices for emphasis</li>
+                        <li>Percentage or value labels</li>
+                    </ul>
+
+                    <h3 id="calculations">Custom Calculations</h3>
+                    <p>Create advanced metrics without writing code:</p>
+
+                    <div class="code-block">
+                        // Velocity calculation
+                        SUM(Story Points) / COUNT(Sprints)
+
+                        // Average resolution time
+                        AVG(Resolved Date - Created Date)
+
+                        // Defect rate
+                        COUNT(Bug Issues) / COUNT(Total Issues) * 100
+                    </div>
+
+                    <h3 id="exports">Export Options</h3>
+                    <p>Share your insights in multiple formats:</p>
+                    <ul>
+                        <li><strong>PDF:</strong> High-quality reports for presentations</li>
+                        <li><strong>Excel:</strong> Raw data for further analysis</li>
+                        <li><strong>PNG/JPG:</strong> Images for documentation</li>
+                        <li><strong>CSV:</strong> Data export for other tools</li>
+                    </ul>
+                </section>
+
+                <!-- Integrations Section -->
+                <section class="docs-section" id="integrations">
+                    <h2>Integrations</h2>
+
+                    <h3 id="table-grid">Table Grid Integration</h3>
+                    <p>Visionade's unique integration with Table Grid provides enhanced capabilities:</p>
+
+                    <h4>Setup Process</h4>
+                    <ol>
+                        <li>Ensure Table Grid is installed in your Jira instance</li>
+                        <li>Navigate to Visionade settings</li>
+                        <li>Click "Connect Table Grid"</li>
+                        <li>Select the Table Grid instances to connect</li>
+                        <li>Configure data synchronization settings</li>
+                    </ol>
+
+                    <h4>Benefits</h4>
+                    <ul>
+                        <li>Enhanced data visualization options</li>
+                        <li>Cross-reference Jira and Table Grid data</li>
+                        <li>Advanced filtering and sorting</li>
+                        <li>Real-time data synchronization</li>
+                    </ul>
+
+                    <h3>API Integration</h3>
+                    <p>Connect Visionade with external systems (Enterprise plan):</p>
+                    <ul>
+                        <li>REST API for data export</li>
+                        <li>Webhook notifications</li>
+                        <li>SSO integration</li>
+                        <li>Custom data connectors</li>
+                    </ul>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section class="docs-section" id="troubleshooting">
+                    <h2>Troubleshooting</h2>
+
+                    <h3 id="common-issues">Common Issues & Solutions</h3>
+
+                    <h4>Dashboard Not Loading</h4>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Dashboard shows "Loading..." indefinitely
+                    </div>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Check your internet connection</li>
+                        <li>Verify you have permissions to access the data sources</li>
+                        <li>Try refreshing the page (Ctrl+F5)</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Contact support if the issue persists</li>
+                    </ol>
+
+                    <h4>Charts Not Displaying Correctly</h4>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Charts appear blank or show incorrect data
+                    </div>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Verify your data source has data for the selected time period</li>
+                        <li>Check field mappings in chart configuration</li>
+                        <li>Ensure filters aren't too restrictive</li>
+                        <li>Try recreating the chart with default settings</li>
+                    </ol>
+
+                    <h4>Performance Issues</h4>
+                    <div class="warning-box">
+                        <strong>Issue:</strong> Slow loading times or timeouts
+                    </div>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Reduce the date range for your queries</li>
+                        <li>Limit the number of data points in charts</li>
+                        <li>Use filters to reduce dataset size</li>
+                        <li>Consider upgrading your Jira instance</li>
+                    </ol>
+
+                    <h3 id="best-practices">Best Practices</h3>
+                    <ul>
+                        <li><strong>Start Simple:</strong> Begin with basic charts and add complexity gradually</li>
+                        <li><strong>Use Filters:</strong> Apply filters to focus on relevant data</li>
+                        <li><strong>Regular Updates:</strong> Schedule regular data refreshes</li>
+                        <li><strong>Team Training:</strong> Provide training for all dashboard users</li>
+                        <li><strong>Performance:</strong> Monitor dashboard performance and optimize as needed</li>
+                    </ul>
+                </section>
+
+                <!-- API Section -->
+                <section class="docs-section" id="api">
+                    <h2>API Documentation</h2>
+                    <p><em>Available with Enterprise plan</em></p>
+
+                    <h3>Authentication</h3>
+                    <p>All API requests require authentication using API tokens:</p>
+
+                    <div class="code-block">
+                        curl -H "Authorization: Bearer YOUR_API_TOKEN" \
+                             -H "Content-Type: application/json" \
+                             https://your-domain.atlassian.net/rest/visionade/1.0/dashboards
+                    </div>
+
+                    <h3>Endpoints</h3>
+                    <ul>
+                        <li><strong>GET /dashboards</strong> - List all dashboards</li>
+                        <li><strong>POST /dashboards</strong> - Create new dashboard</li>
+                        <li><strong>GET /dashboards/{id}/data</strong> - Export dashboard data</li>
+                        <li><strong>POST /webhooks</strong> - Configure webhooks</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Coming Soon:</strong> Full API documentation will be available with the Enterprise plan launch.
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Support CTA -->
+    <section style="padding: 64px 0; background: var(--bg-light); text-align: center;">
+        <div class="container">
+            <h2>Need More Help?</h2>
+            <p style="margin-bottom: 32px;">Our support team is here to help you succeed with Visionade</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:support@visionade.com" class="btn btn-primary">
+                    Contact Support
+                </a>
+                <a href="resources.html#community" class="btn btn-secondary">
+                    Join Community
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="benefits.html">Benefits</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="resources.html">Templates</a>
+                    <a href="resources.html#blog">Blog</a>
+                    <a href="resources.html#webinars">Webinars</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="documentation.html#quickstart">Quick Start</a>
+                    <a href="documentation.html#troubleshooting">Help Center</a>
+                    <a href="mailto:support@visionade.com">Contact Support</a>
+                    <a href="resources.html#community">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.docs-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update navigation
+            document.querySelectorAll('.docs-nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+        }
+
+        function searchDocs() {
+            const query = document.getElementById('docsSearch').value.toLowerCase();
+            const sections = document.querySelectorAll('.docs-section');
+
+            if (!query) return;
+
+            sections.forEach(section => {
+                const content = section.textContent.toLowerCase();
+                if (content.includes(query)) {
+                    section.classList.add('active');
+                    section.innerHTML = section.innerHTML.replace(
+                        new RegExp(query, 'gi'),
+                        `<mark>$&</mark>`
+                    );
+                }
+            });
+        }
+
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

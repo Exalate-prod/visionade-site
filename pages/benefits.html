@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits - Visionade | Calculate Your ROI and See Real Results</title>
+    <meta name="description" content="Discover the measurable benefits of Visionade. Calculate your ROI, see customer success stories, and compare with alternatives.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        .benefits-hero {
+            padding: 64px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            text-align: center;
+        }
+
+        .roi-calculator {
+            background: white;
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin: 64px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .calculator-results {
+            background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%);
+            color: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--radius-sm);
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .metrics-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .metric-description {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .comparison-section {
+            padding: 80px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-top: 48px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .comparison-table th {
+            background: var(--bg-light);
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table .visionade-col {
+            background: #f0f8ff;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .check-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .cross-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: var(--text-medium);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h5 {
+            margin: 0 0 4px;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 2rem;
+            color: var(--border-light);
+        }
+
+        @media (max-width: 768px) {
+            .roi-calculator {
+                padding: 32px 24px;
+                margin: 32px 16px;
+            }
+
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="benefits.html" style="color: var(--primary-color); font-weight: 600;">Benefits</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="documentation.html">Docs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="benefits-hero">
+        <div class="container">
+            <h1>Measurable Benefits That Transform Your Business</h1>
+            <p class="subtitle">See exactly how much time and money Visionade can save your team with real metrics and proven results</p>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section style="padding: 64px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Calculate Your ROI</h2>
+                <p>Enter your team details to see potential savings with Visionade</p>
+            </div>
+
+            <div class="roi-calculator">
+                <h3 style="margin-bottom: 32px; text-align: center; color: var(--text-dark);">ROI Calculator</h3>
+
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="teamSize">Team Size</label>
+                        <input type="number" id="teamSize" value="15" min="1" max="1000" onchange="calculateROI()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hourlyRate">Average Hourly Rate ($)</label>
+                        <input type="number" id="hourlyRate" value="75" min="10" max="500" onchange="calculateROI()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reportingHours">Hours/Week on Manual Reporting</label>
+                        <input type="number" id="reportingHours" value="12" min="1" max="40" onchange="calculateROI()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visionadeCost">Visionade Monthly Cost ($)</label>
+                        <input type="number" id="visionadeCost" value="199" min="49" max="2000" onchange="calculateROI()">
+                    </div>
+                </div>
+
+                <div class="calculator-results" id="calculatorResults">
+                    <h4 style="margin-bottom: 16px;">Your Potential Savings</h4>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-value" id="weeklySavings">$9,000</div>
+                            <div class="result-label">Weekly Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="annualSavings">$468k</div>
+                            <div class="result-label">Annual Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="roiPercentage">23,400%</div>
+                            <div class="result-label">Annual ROI</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="paybackPeriod">2</div>
+                            <div class="result-label">Days to Payback</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Success Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proven Results from Real Customers</h2>
+                <p>These metrics come from actual Visionade users across different industries</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">10+</div>
+                    <div class="metric-description">Hours Saved Weekly</div>
+                    <p>Per team member, eliminating manual Excel reporting and data collection</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">60%</div>
+                    <div class="metric-description">Faster Decision Making</div>
+                    <p>Real-time dashboards enable quicker insights and faster response times</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">3x</div>
+                    <div class="metric-description">Increase in Report Usage</div>
+                    <p>Self-service analytics means more team members access and use data</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">0</div>
+                    <div class="metric-description">Training Required</div>
+                    <p>Intuitive interface means teams start creating reports immediately</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">95%</div>
+                    <div class="metric-description">User Satisfaction Rate</div>
+                    <p>Based on post-implementation surveys and user feedback</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">2.5x</div>
+                    <div class="metric-description">ROI in First Year</div>
+                    <p>Average return on investment measured across all customer segments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Matrix -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Visionade Compares</h2>
+                <p>See why teams choose Visionade over other analytics solutions</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="visionade-col">Visionade</th>
+                            <th>eazyBI</th>
+                            <th>Custom Charts</th>
+                            <th>Native Jira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No-Code Interface</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Table Grid Support</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Project Aggregation</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td>Limited</td>
+                            <td><span class="cross-icon">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td>Price Point</td>
+                            <td class="visionade-col">$$</td>
+                            <td>$$$$</td>
+                            <td>$$</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Learning Curve</td>
+                            <td class="visionade-col">Low</td>
+                            <td>High</td>
+                            <td>Low</td>
+                            <td>Low</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise Features</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                            <td><span class="cross-icon">❌</span></td>
+                        </tr>
+                        <tr>
+                            <td>Real-time Updates</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Calculations</td>
+                            <td class="visionade-col"><span class="check-icon">✅</span></td>
+                            <td><span class="check-icon">✅</span></td>
+                            <td>Limited</td>
+                            <td>Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Export Options</td>
+                            <td class="visionade-col">PDF, Excel, Images</td>
+                            <td>PDF, Excel</td>
+                            <td>Images</td>
+                            <td>Excel</td>
+                        </tr>
+                        <tr>
+                            <td>Setup Time</td>
+                            <td class="visionade-col">< 10 minutes</td>
+                            <td>2-3 hours</td>
+                            <td>< 30 minutes</td>
+                            <td">< 5 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Real feedback from teams using Visionade to drive better decisions</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "Visionade completely transformed how we handle project reporting. What used to take our team 15 hours weekly now happens automatically. The ROI was immediate and substantial."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DM</div>
+                        <div class="author-info">
+                            <h5>David Mitchell</h5>
+                            <p>Development Manager, TechFlow Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "The Table Grid integration is a game-changer. We can finally visualize our custom field data alongside standard Jira metrics. No other tool offers this capability."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AC</div>
+                        <div class="author-info">
+                            <h5>Amanda Chen</h5>
+                            <p>Agile Coach, InnovateTech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "Setup took less than 10 minutes, and our entire service desk team was creating SLA reports within an hour. The learning curve is practically non-existent."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">IS</div>
+                        <div class="author-info">
+                            <h5>Ian Stewart</h5>
+                            <p>IT Service Manager, GlobalCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "We've tried multiple analytics tools, but Visionade strikes the perfect balance between power and simplicity. Our non-technical stakeholders love it."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h5>Maria Rodriguez</h5>
+                            <p>Product Owner, StartupAccel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "The cost savings are remarkable. We eliminated two FTE positions dedicated to manual reporting while improving data accuracy and accessibility across the organization."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JW</div>
+                        <div class="author-info">
+                            <h5>James Wilson</h5>
+                            <p>VP Engineering, ScaleUp Systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-quote">
+                        "Real-time dashboards have transformed our sprint reviews. Stakeholders now see live data instead of week-old Excel reports. The engagement is night and day."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h5>Sarah Park</h5>
+                            <p>Scrum Master, AgileFirst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 16px;">Ready to Experience These Benefits?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start your free trial today and see the difference Visionade can make for your team.</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
+                    Start Free Trial
+                </a>
+                <a href="mailto:sales@visionade.com?subject=Enterprise%20Demo%20Request" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                    Request Demo
+                </a>
+            </div>
+
+            <p style="margin-top: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                Questions about ROI? <a href="mailto:sales@visionade.com" style="color: white; text-decoration: underline;">Contact our team</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="benefits.html">Benefits</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="resources.html">Templates</a>
+                    <a href="resources.html#blog">Blog</a>
+                    <a href="resources.html#webinars">Webinars</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="documentation.html#quickstart">Quick Start</a>
+                    <a href="documentation.html#troubleshooting">Help Center</a>
+                    <a href="mailto:support@visionade.com">Contact Support</a>
+                    <a href="resources.html#community">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        function calculateROI() {
+            const teamSize = parseInt(document.getElementById('teamSize').value) || 0;
+            const hourlyRate = parseInt(document.getElementById('hourlyRate').value) || 0;
+            const reportingHours = parseInt(document.getElementById('reportingHours').value) || 0;
+            const visionadeCost = parseInt(document.getElementById('visionadeCost').value) || 0;
+
+            // Assumptions: 80% time savings, 52 weeks per year
+            const timeSavingsPercentage = 0.8;
+            const weeksPerYear = 52;
+
+            // Calculate savings
+            const weeklyCostOfReporting = teamSize * reportingHours * hourlyRate;
+            const weeklySavings = weeklyCostOfReporting * timeSavingsPercentage;
+            const annualSavings = weeklySavings * weeksPerYear;
+            const annualVisionadeCost = visionadeCost * 12;
+
+            const netAnnualSavings = annualSavings - annualVisionadeCost;
+            const roiPercentage = annualVisionadeCost > 0 ? (netAnnualSavings / annualVisionadeCost) * 100 : 0;
+            const paybackDays = visionadeCost > 0 ? Math.ceil((visionadeCost / (weeklySavings / 7))) : 0;
+
+            // Update display
+            document.getElementById('weeklySavings').textContent = '$' + weeklySavings.toLocaleString();
+            document.getElementById('annualSavings').textContent = '$' + Math.round(annualSavings/1000) + 'k';
+            document.getElementById('roiPercentage').textContent = Math.round(roiPercentage).toLocaleString() + '%';
+            document.getElementById('paybackPeriod').textContent = paybackDays;
+        }
+
+        // Initialize calculator on page load
+        document.addEventListener('DOMContentLoaded', calculateROI);
+
+        // Animate metrics on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target.querySelector('.metric-number');
+                    const finalValue = number.textContent;
+                    const isPercentage = finalValue.includes('%');
+                    const isMultiplier = finalValue.includes('x');
+                    const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+
+                    let currentValue = 0;
+                    const increment = Math.ceil(numericValue / 30);
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            currentValue = numericValue;
+                            clearInterval(timer);
+                        }
+
+                        let displayValue = currentValue.toString();
+                        if (isPercentage) displayValue += '%';
+                        if (isMultiplier) displayValue += 'x';
+                        if (finalValue.includes('+')) displayValue += '+';
+
+                        number.textContent = displayValue;
+                    }, 50);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.metric-card').forEach(card => {
+            metricsObserver.observe(card);
+        });
+    </script>
+</body>
+</html>

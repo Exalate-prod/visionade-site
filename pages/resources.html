@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Visionade | Templates, Blog, Webinars & Community</title>
+    <meta name="description" content="Access free dashboard templates, educational content, webinars, and community resources to maximize your Visionade experience.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        .resources-hero {
+            padding: 64px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            text-align: center;
+        }
+
+        .resource-nav {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .resource-nav-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .resource-nav-links a {
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .resource-nav-links a.active,
+        .resource-nav-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .resource-section {
+            padding: 64px 0;
+            display: none;
+        }
+
+        .resource-section.active {
+            display: block;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .template-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .template-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .template-preview {
+            height: 180px;
+            background: linear-gradient(45deg, #f8faff, #e6f2ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .template-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .template-info {
+            padding: 20px;
+        }
+
+        .template-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .template-tag {
+            background: var(--bg-light);
+            color: var(--text-medium);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(45deg, #0052CC20, #00C85320);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-bottom: 12px;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .blog-excerpt {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .read-time {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .webinar-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .webinar-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .webinar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .webinar-date {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .webinar-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .webinar-status.upcoming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .webinar-status.live {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .webinar-status.recorded {
+            background: var(--bg-light);
+            color: var(--text-medium);
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .download-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .download-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .community-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .resource-nav-links {
+                gap: 16px;
+            }
+
+            .webinar-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .templates-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="documentation.html">Docs</a></li>
+                <li><a href="resources.html" style="color: var(--primary-color); font-weight: 600;">Resources</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="resources-hero">
+        <div class="container">
+            <h1>Resources & Learning Center</h1>
+            <p class="subtitle">Everything you need to master Jira analytics and get the most from Visionade</p>
+        </div>
+    </section>
+
+    <!-- Resource Navigation -->
+    <nav class="resource-nav">
+        <div class="container">
+            <div class="resource-nav-links">
+                <a href="#templates" class="resource-nav-link active" onclick="showResourceSection('templates')">Templates</a>
+                <a href="#blog" class="resource-nav-link" onclick="showResourceSection('blog')">Blog</a>
+                <a href="#webinars" class="resource-nav-link" onclick="showResourceSection('webinars')">Webinars</a>
+                <a href="#downloads" class="resource-nav-link" onclick="showResourceSection('downloads')">Downloads</a>
+                <a href="#community" class="resource-nav-link" onclick="showResourceSection('community')">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Templates Section -->
+    <section class="resource-section active" id="templates">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dashboard Templates</h2>
+                <p>Pre-built dashboard templates to get you started quickly</p>
+            </div>
+
+            <div class="templates-grid">
+                <div class="template-card" onclick="downloadTemplate('sprint-performance')">
+                    <div class="template-preview">
+                        🏃‍♂️
+                        <div class="template-badge">Popular</div>
+                    </div>
+                    <div class="template-info">
+                        <h4>Sprint Performance Dashboard</h4>
+                        <p>Track velocity, burndown charts, and sprint completion rates across your agile teams.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Agile</span>
+                            <span class="template-tag">Velocity</span>
+                            <span class="template-tag">Burndown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" onclick="downloadTemplate('release-planning')">
+                    <div class="template-preview">🚀</div>
+                    <div class="template-info">
+                        <h4>Release Planning Overview</h4>
+                        <p>Visualize release progress, feature completion, and timeline tracking.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Release</span>
+                            <span class="template-tag">Planning</span>
+                            <span class="template-tag">Timeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" onclick="downloadTemplate('sla-compliance')">
+                    <div class="template-preview">📋</div>
+                    <div class="template-info">
+                        <h4>SLA Compliance Report</h4>
+                        <p>Monitor service level agreements and response times for support teams.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">SLA</span>
+                            <span class="template-tag">Support</span>
+                            <span class="template-tag">Compliance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" onclick="downloadTemplate('resource-allocation')">
+                    <div class="template-preview">👥</div>
+                    <div class="template-info">
+                        <h4>Resource Allocation Matrix</h4>
+                        <p>Analyze team workload distribution and capacity planning.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Resources</span>
+                            <span class="template-tag">Capacity</span>
+                            <span class="template-tag">Planning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" onclick="downloadTemplate('bug-analysis')">
+                    <div class="template-preview">🐛</div>
+                    <div class="template-info">
+                        <h4>Bug Trend Analysis</h4>
+                        <p>Track defect patterns, resolution times, and quality metrics.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Bugs</span>
+                            <span class="template-tag">Quality</span>
+                            <span class="template-tag">Trends</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" onclick="downloadTemplate('team-velocity')">
+                    <div class="template-preview">
+                        ⚡
+                        <div class="template-badge">New</div>
+                    </div>
+                    <div class="template-info">
+                        <h4>Team Velocity Tracker</h4>
+                        <p>Monitor team performance and identify improvement opportunities.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Velocity</span>
+                            <span class="template-tag">Performance</span>
+                            <span class="template-tag">Teams</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="resource-section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog & Insights</h2>
+                <p>Expert tips, best practices, and industry insights</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">📊</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Dec 15, 2024</span>
+                            <span>•</span>
+                            <span>Analytics</span>
+                        </div>
+                        <h3 class="blog-title">5 Ways to Reduce Jira Reporting Time by 80%</h3>
+                        <p class="blog-excerpt">Discover proven strategies to eliminate manual reporting and automate your Jira analytics workflow.</p>
+                        <div class="read-time">5 min read</div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">💰</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Dec 10, 2024</span>
+                            <span>•</span>
+                            <span>ROI</span>
+                        </div>
+                        <h3 class="blog-title">The Hidden Costs of Manual Project Reporting</h3>
+                        <p class="blog-excerpt">Calculate the true cost of manual reporting and see how automation can transform your bottom line.</p>
+                        <div class="read-time">7 min read</div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">🎯</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Dec 5, 2024</span>
+                            <span>•</span>
+                            <span>Strategy</span>
+                        </div>
+                        <h3 class="blog-title">Democratizing Data: Why No-Code Analytics Matter</h3>
+                        <p class="blog-excerpt">Learn how no-code analytics platforms are enabling non-technical users to create powerful insights.</p>
+                        <div class="read-time">6 min read</div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">🔗</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Nov 28, 2024</span>
+                            <span>•</span>
+                            <span>Integration</span>
+                        </div>
+                        <h3 class="blog-title">Table Grid + Visionade: The Perfect Combination</h3>
+                        <p class="blog-excerpt">Explore the unique benefits of combining Table Grid with Visionade for enhanced data visualization.</p>
+                        <div class="read-time">8 min read</div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">📈</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Nov 20, 2024</span>
+                            <span>•</span>
+                            <span>Best Practices</span>
+                        </div>
+                        <h3 class="blog-title">Dashboard Design Principles for Maximum Impact</h3>
+                        <p class="blog-excerpt">Master the art of dashboard design with these proven principles for creating impactful visualizations.</p>
+                        <div class="read-time">10 min read</div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">🚀</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>Nov 15, 2024</span>
+                            <span>•</span>
+                            <span>Case Study</span>
+                        </div>
+                        <h3 class="blog-title">From Excel Hell to Dashboard Heaven</h3>
+                        <p class="blog-excerpt">A real customer journey from manual Excel reporting to automated, real-time dashboards.</p>
+                        <div class="read-time">12 min read</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinars Section -->
+    <section class="resource-section" id="webinars">
+        <div class="container">
+            <div class="section-header">
+                <h2>Webinars & Training</h2>
+                <p>Join our monthly webinars and training sessions</p>
+            </div>
+
+            <div class="webinar-card">
+                <div class="webinar-header">
+                    <div>
+                        <h4>Mastering Jira Analytics Without Code</h4>
+                        <p style="color: var(--text-medium); margin: 8px 0 0;">Learn to create powerful dashboards using Visionade's drag-and-drop interface</p>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="webinar-date">Jan 15, 2025</div>
+                        <div class="webinar-status upcoming">Upcoming</div>
+                    </div>
+                </div>
+                <p style="margin-bottom: 16px;">Duration: 60 minutes | Presenter: Sarah Park, Solutions Engineer</p>
+                <a href="mailto:events@visionade.com?subject=Webinar Registration" class="btn btn-primary">Register Now</a>
+            </div>
+
+            <div class="webinar-card">
+                <div class="webinar-header">
+                    <div>
+                        <h4>Cross-Project Reporting Best Practices</h4>
+                        <p style="color: var(--text-medium); margin: 8px 0 0;">Advanced techniques for aggregating data across multiple Jira projects</p>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="webinar-date">Dec 18, 2024</div>
+                        <div class="webinar-status recorded">Recorded</div>
+                    </div>
+                </div>
+                <p style="margin-bottom: 16px;">Duration: 45 minutes | Presenter: David Mitchell, Product Manager</p>
+                <a href="#" class="btn btn-secondary" onclick="watchRecording('cross-project')">Watch Recording</a>
+            </div>
+
+            <div class="webinar-card">
+                <div class="webinar-header">
+                    <div>
+                        <h4>Table Grid Integration Deep Dive</h4>
+                        <p style="color: var(--text-medium); margin: 8px 0 0;">Unlock the full potential of Table Grid integration with Visionade</p>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div class="webinar-date">Nov 20, 2024</div>
+                        <div class="webinar-status recorded">Recorded</div>
+                    </div>
+                </div>
+                <p style="margin-bottom: 16px;">Duration: 50 minutes | Presenter: Amanda Chen, Technical Architect</p>
+                <a href="#" class="btn btn-secondary" onclick="watchRecording('table-grid')">Watch Recording</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="resource-section" id="downloads">
+        <div class="container">
+            <div class="section-header">
+                <h2>Download Center</h2>
+                <p>Free resources to help you succeed with Visionade</p>
+            </div>
+
+            <div class="download-grid">
+                <div class="download-card" onclick="downloadResource('roi-calculator')">
+                    <div class="download-icon">📊</div>
+                    <h4>ROI Calculation Spreadsheet</h4>
+                    <p>Calculate your potential savings with this comprehensive ROI calculator template.</p>
+                    <div style="margin-top: 16px;">
+                        <span style="background: var(--bg-light); padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">Excel</span>
+                    </div>
+                </div>
+
+                <div class="download-card" onclick="downloadResource('buyers-guide')">
+                    <div class="download-icon">📋</div>
+                    <h4>Analytics Platform Buyer's Guide</h4>
+                    <p>Complete guide to evaluating and selecting the right analytics platform for your team.</p>
+                    <div style="margin-top: 16px;">
+                        <span style="background: var(--bg-light); padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">PDF</span>
+                    </div>
+                </div>
+
+                <div class="download-card" onclick="downloadResource('implementation-checklist')">
+                    <div class="download-icon">✅</div>
+                    <h4>Implementation Checklist</h4>
+                    <p>Step-by-step checklist to ensure a successful Visionade implementation.</p>
+                    <div style="margin-top: 16px;">
+                        <span style="background: var(--bg-light); padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">PDF</span>
+                    </div>
+                </div>
+
+                <div class="download-card" onclick="downloadResource('best-practices')">
+                    <div class="download-icon">🎯</div>
+                    <h4>Dashboard Design Best Practices</h4>
+                    <p>Design principles and guidelines for creating effective and impactful dashboards.</p>
+                    <div style="margin-top: 16px;">
+                        <span style="background: var(--bg-light); padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">PDF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="resource-section" id="community">
+        <div class="container">
+            <div class="section-header">
+                <h2>Community & Support</h2>
+                <p>Connect with other Visionade users and get help from experts</p>
+            </div>
+
+            <div class="community-stats">
+                <div class="stat-card">
+                    <div class="stat-number">2,500+</div>
+                    <div>Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div>Companies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div>Templates Shared</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div>Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <div class="community-features">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h4>Community Forum</h4>
+                    <p>Ask questions, share tips, and connect with other Visionade users in our community forum.</p>
+                    <a href="mailto:community@visionade.com?subject=Community Access Request" class="btn btn-primary" style="margin-top: 16px;">Join Forum</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h4>User Training</h4>
+                    <p>Comprehensive training programs for individuals and teams to master Visionade.</p>
+                    <a href="mailto:training@visionade.com?subject=Training Inquiry" class="btn btn-primary" style="margin-top: 16px;">Get Training</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h4>Customer Success</h4>
+                    <p>Dedicated success managers to help you achieve your analytics goals with Visionade.</p>
+                    <a href="mailto:success@visionade.com?subject=Success Program" class="btn btn-primary" style="margin-top: 16px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 16px;">Ready to Get Started?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Use these resources to accelerate your success with Visionade.</p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
+                    Start Free Trial
+                </a>
+                <a href="documentation.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                    Read Documentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="benefits.html">Benefits</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="resources.html">Templates</a>
+                    <a href="resources.html#blog">Blog</a>
+                    <a href="resources.html#webinars">Webinars</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="documentation.html#quickstart">Quick Start</a>
+                    <a href="documentation.html#troubleshooting">Help Center</a>
+                    <a href="mailto:support@visionade.com">Contact Support</a>
+                    <a href="resources.html#community">Community</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        function showResourceSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.resource-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update navigation
+            document.querySelectorAll('.resource-nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[onclick="showResourceSection('${sectionId}')"]`).classList.add('active');
+
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+
+        function downloadTemplate(templateId) {
+            // Simulate template download
+            alert(`Downloading ${templateId} template...`);
+
+            // Track download event
+            if (typeof trackEvent !== 'undefined') {
+                trackEvent('template_download', { template_id: templateId });
+            }
+        }
+
+        function downloadResource(resourceId) {
+            // Simulate resource download
+            alert(`Downloading ${resourceId} resource...`);
+
+            // Track download event
+            if (typeof trackEvent !== 'undefined') {
+                trackEvent('resource_download', { resource_id: resourceId });
+            }
+        }
+
+        function watchRecording(webinarId) {
+            // Simulate webinar recording access
+            alert(`Opening ${webinarId} webinar recording...`);
+
+            // Track webinar view event
+            if (typeof trackEvent !== 'undefined') {
+                trackEvent('webinar_view', { webinar_id: webinarId });
+            }
+        }
+
+        // Handle hash navigation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showResourceSection(hash);
+            }
+        });
+
+        // Animate community stats on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const number = entry.target.querySelector('.stat-number');
+                    const finalValue = number.textContent;
+                    const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+                    const isPercentage = finalValue.includes('%');
+                    const hasPlus = finalValue.includes('+');
+
+                    let currentValue = 0;
+                    const increment = Math.ceil(numericValue / 50);
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            currentValue = numericValue;
+                            clearInterval(timer);
+                        }
+
+                        let displayValue = currentValue.toLocaleString();
+                        if (hasPlus) displayValue += '+';
+                        if (isPercentage) displayValue += '%';
+
+                        number.textContent = displayValue;
+                    }, 30);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
