@@ -9,11 +9,13 @@
 
 /* Design System Variables */
 :root {
-    /* Colors from PRD */
-    --primary-color: #0052CC;
-    --secondary-color: #00C853;
-    --accent-color: #FF6B6B;
-    --text-dark: #172B4D;
+    /* Official Visionade Brand Colors */
+    --primary-color: #FFE528; /* Citrus Spark */
+    --secondary-color: #2F2F2E; /* Verdant Depth */
+    --accent-color: #B7AB94; /* Golden Sand */
+    --tertiary-color: #E3CDA3; /* Sunny Wheat */
+    --dark-color: #2F2F2E; /* Espresso Edge */
+    --text-dark: #2F2F2E;
     --text-medium: #5E6C84;
     --text-light: #8993A4;
     --bg-white: #FFFFFF;
@@ -158,25 +160,26 @@ a:hover {
 
 .btn-primary {
     background: var(--primary-color);
-    color: white;
+    color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .btn-primary:hover {
-    background: #0043a8;
-    color: white;
+    background: #F4D91A;
+    color: var(--secondary-color);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .btn-lg {
@@ -188,23 +191,27 @@ a:hover {
 /* Hero Section */
 .hero {
     padding: var(--space-xxxl) 0;
-    background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
     text-align: center;
+    color: var(--secondary-color);
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: var(--space-lg);
-    color: var(--text-dark);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero .subtitle {
     font-size: 1.25rem;
-    color: var(--text-medium);
+    color: var(--bg-white);
     margin-bottom: var(--space-xxl);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.95;
 }
 
 .hero-cta {
@@ -217,12 +224,13 @@ a:hover {
 }
 
 .trust-indicator {
-    background: var(--bg-white);
+    background: rgba(255, 255, 255, 0.9);
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-md);
     font-size: 0.9rem;
-    color: var(--text-medium);
+    color: var(--secondary-color);
     box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
 }
 
 /* Value Proposition Grid */
@@ -252,7 +260,8 @@ a:hover {
     justify-content: center;
     margin: 0 auto var(--space-lg);
     font-size: 2rem;
-    color: white;
+    color: var(--secondary-color);
+    border: 3px solid var(--secondary-color);
 }
 
 .value-prop h3 {
@@ -287,7 +296,7 @@ a:hover {
 }
 
 .feature-card h4 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: var(--space-md);
 }
 
@@ -339,13 +348,14 @@ a:hover {
 .demo-btn.active,
 .demo-btn:hover {
     background: var(--primary-color);
-    color: white;
+    color: var(--secondary-color);
     border-color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* Footer */
 .footer {
-    background: var(--text-dark);
+    background: var(--secondary-color);
     color: white;
     padding: var(--space-xxxl) 0 var(--space-xl);
 }
@@ -464,4 +474,116 @@ button:focus {
         --text-medium: #000000;
         --border-light: #000000;
     }
+}
+
+/* Coming Soon / Disabled States */
+.coming-soon,
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    position: relative;
+    pointer-events: none;
+}
+
+.coming-soon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: inherit;
+    z-index: 1;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--text-dark) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Interactive elements that should be disabled */
+.coming-soon .btn,
+.coming-soon button,
+.coming-soon input,
+.coming-soon select,
+.disabled .btn,
+.disabled button,
+.disabled input,
+.disabled select {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Visionade Brand Elements */
+.visionade-accent {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
+}
+
+.visionade-logo-style {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Lemon slice decorative elements */
+.lemon-slice::before {
+    content: "🍋";
+    position: absolute;
+    opacity: 0.1;
+    font-size: 8rem;
+    pointer-events: none;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%) rotate(15deg);
+    z-index: 0;
+}
+
+/* Section backgrounds inspired by brand */
+.brand-bg-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--tertiary-color) 100%);
+    color: var(--secondary-color);
+}
+
+.brand-bg-secondary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-color) 100%);
+    color: var(--primary-color);
 }

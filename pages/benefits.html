@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benefits - Visionade | Calculate Your ROI and See Real Results</title>
-    <meta name="description" content="Discover the measurable benefits of Visionade. Calculate your ROI, see customer success stories, and compare with alternatives.">
+    <title>Benefits - Visionade: Reports, Dashboards, Graphs, and Charts for Jira | By Exalate</title>
+    <meta name="description" content="Discover the measurable benefits of Visionade. See real customer results with custom Jira reports, dashboards, and data visualization.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,7 +281,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <div class="logo">
-                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade</a>
+                <a href="../index.html" style="color: inherit; text-decoration: none;">Visionade <span style="font-size: 0.8em; color: var(--text-medium);">by Exalate</span></a>
             </div>
             <ul class="nav-links">
                 <li><a href="how-it-works.html">How It Works</a></li>
@@ -310,52 +310,55 @@
                 <p>Enter your team details to see potential savings with Visionade</p>
             </div>
 
-            <div class="roi-calculator">
-                <h3 style="margin-bottom: 32px; text-align: center; color: var(--text-dark);">ROI Calculator</h3>
+            <div class="tooltip">
+                <div class="roi-calculator coming-soon">
+                    <h3 style="margin-bottom: 32px; text-align: center; color: var(--text-dark);">ROI Calculator</h3>
 
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="teamSize">Team Size</label>
-                        <input type="number" id="teamSize" value="15" min="1" max="1000" onchange="calculateROI()">
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="teamSize">Team Size</label>
+                            <input type="number" id="teamSize" value="15" min="1" max="1000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hourlyRate">Average Hourly Rate ($)</label>
+                            <input type="number" id="hourlyRate" value="75" min="10" max="500">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportingHours">Hours/Week on Manual Reporting</label>
+                            <input type="number" id="reportingHours" value="12" min="1" max="40">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visionadeCost">Visionade Monthly Cost ($)</label>
+                            <input type="number" id="visionadeCost" value="5" min="5" max="100">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="hourlyRate">Average Hourly Rate ($)</label>
-                        <input type="number" id="hourlyRate" value="75" min="10" max="500" onchange="calculateROI()">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reportingHours">Hours/Week on Manual Reporting</label>
-                        <input type="number" id="reportingHours" value="12" min="1" max="40" onchange="calculateROI()">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="visionadeCost">Visionade Monthly Cost ($)</label>
-                        <input type="number" id="visionadeCost" value="199" min="49" max="2000" onchange="calculateROI()">
+                    <div class="calculator-results" id="calculatorResults">
+                        <h4 style="margin-bottom: 16px;">Your Potential Savings</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <div class="result-value">$9,000</div>
+                                <div class="result-label">Weekly Savings</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value">$468k</div>
+                                <div class="result-label">Annual Savings</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value">23,400%</div>
+                                <div class="result-label">Annual ROI</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-value">2</div>
+                                <div class="result-label">Days to Payback</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="calculator-results" id="calculatorResults">
-                    <h4 style="margin-bottom: 16px;">Your Potential Savings</h4>
-                    <div class="result-grid">
-                        <div class="result-item">
-                            <div class="result-value" id="weeklySavings">$9,000</div>
-                            <div class="result-label">Weekly Savings</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value" id="annualSavings">$468k</div>
-                            <div class="result-label">Annual Savings</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value" id="roiPercentage">23,400%</div>
-                            <div class="result-label">Annual ROI</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value" id="paybackPeriod">2</div>
-                            <div class="result-label">Days to Payback</div>
-                        </div>
-                    </div>
-                </div>
+                <span class="tooltip-text">Coming Soon</span>
             </div>
         </div>
     </section>
@@ -603,20 +606,20 @@
     <!-- CTA Section -->
     <section style="padding: 64px 0; background: linear-gradient(135deg, #0052CC 0%, #0043a8 100%); text-align: center; color: white;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 16px;">Ready to Experience These Benefits?</h2>
+            <h2 style="color: white; margin-bottom: 16px;">Data Stirred. Not Scrambled.</h2>
             <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start your free trial today and see the difference Visionade can make for your team.</p>
 
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://marketplace.atlassian.com/apps/visionade" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
-                    Start Free Trial
+                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn" style="background: white; color: var(--primary-color); font-weight: 600;" target="_blank" rel="noopener">
+                    Start Free Trial - $5/month
                 </a>
-                <a href="mailto:sales@visionade.com?subject=Enterprise%20Demo%20Request" class="btn" style="background: transparent; color: white; border: 2px solid white;">
-                    Request Demo
+                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira" class="btn" style="background: transparent; color: white; border: 2px solid white;" target="_blank">
+                    View on Marketplace
                 </a>
             </div>
 
             <p style="margin-top: 24px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
-                Questions about ROI? <a href="mailto:sales@visionade.com" style="color: white; text-decoration: underline;">Contact our team</a>
+                Questions? <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?tab=support" target="_blank" style="color: white; text-decoration: underline;">Get support</a>
             </p>
         </div>
     </section>
@@ -630,7 +633,7 @@
                     <a href="how-it-works.html">How It Works</a>
                     <a href="benefits.html">Benefits</a>
                     <a href="pricing.html">Pricing</a>
-                    <a href="https://marketplace.atlassian.com/apps/visionade" target="_blank">Marketplace</a>
+                    <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira" target="_blank">Marketplace</a>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
@@ -655,7 +658,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Visionade. All rights reserved. Powered by Exalate.</p>
+                <p>&copy; 2024 Visionade by Exalate. All rights reserved.</p>
             </div>
         </div>
     </footer>
