@@ -135,6 +135,12 @@ a.yellow-link:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    display: inline-block;
+}
+
+.logo a {
+    display: inline-block;
+    outline-offset: 4px;
 }
 
 .nav-links {
@@ -597,7 +603,8 @@ button:focus {
 /* Tooltip Styles */
 .tooltip {
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
 }
 
 .tooltip .tooltip-text {
