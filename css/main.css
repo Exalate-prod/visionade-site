@@ -11,11 +11,11 @@
 :root {
     /* Official Visionade Brand Colors */
     --primary-color: #FFE528; /* Citrus Spark */
-    --secondary-color: #2F2F2E; /* Verdant Depth */
-    --accent-color: #B7AB94; /* Golden Sand */
+    --secondary-color: #2F372E; /* Verdant Depth */
+    --accent-color: #B7A894; /* Golden Sand */
     --tertiary-color: #E3CDA3; /* Sunny Wheat */
-    --dark-color: #2F2F2E; /* Espresso Edge */
-    --text-dark: #2F2F2E;
+    --dark-color: #23120E; /* Espresso Edge */
+    --text-dark: #2F372E;
     --text-medium: #5E6C84;
     --text-light: #8993A4;
     --bg-white: #FFFFFF;

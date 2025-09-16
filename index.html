@@ -36,6 +36,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/Vector SVG/Visionade Icon.svg">
+    <link rel="icon" type="image/png" href="assets/icons/PNG/Visionade Icon 72.png">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
 
@@ -46,7 +50,9 @@
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
-            <div class="logo">Visionade <span style="font-size: 0.8em; color: var(--text-medium);">by Exalate</span></div>
+            <div class="logo">
+                <img src="assets/icons/Vector SVG/Visionade_Horizontal_DT.svg" alt="Visionade by Exalate" style="height: 40px;">
+            </div>
             <ul class="nav-links">
                 <li><a href="pages/how-it-works.html">How It Works</a></li>
                 <li><a href="pages/benefits.html">Benefits</a></li>
@@ -61,8 +67,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <section class="hero" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 10%; right: 5%; opacity: 0.1; z-index: 0;">
+            <img src="assets/icons/LemonPiece-Citrusspark.png" alt="" style="width: 120px; transform: rotate(15deg);">
+        </div>
+        <div style="position: absolute; bottom: 10%; left: 5%; opacity: 0.1; z-index: 0;">
+            <img src="assets/icons/LemonPiece-sunnywheat.png" alt="" style="width: 80px; transform: rotate(-20deg);">
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
             <h1>Data Stirred. Not Scrambled.</h1>
             <p class="subtitle">Refresh your data story in Jira—turn raw insights into clear actions with real-time reports, custom charts, and dashboards.</p>
 
@@ -132,11 +144,10 @@
                     </div>
 
                     <div class="demo-area" id="demoArea">
-                        <div class="demo-placeholder">
-                            <p>📊 Interactive Dashboard Demo</p>
-                            <p>Custom Jira reports with sum, average, count calculations</p>
-                            <p><em>Multi-dimensional analysis with drag-and-drop interface</em></p>
-                        </div>
+                        <img src="assets/images/Highlight 1.png" alt="Visionade Dashboard Demo" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                        <p style="text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--text-light);">
+                            <em>Real Visionade interface showing custom Jira reports and charts</em>
+                        </p>
                     </div>
                 </div>
                 <span class="tooltip-text">Coming Soon</span>
