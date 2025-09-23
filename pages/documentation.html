@@ -368,30 +368,30 @@
                             <h3>Setting Up Visionade</h3>
                             <p>Once installed, configure Visionade for your first report:</p>
                             <ol>
-                                <li>Click on "Apps" in the top navigation</li>
-                                <li>Select "Visionade" from the dropdown</li>
-                                <li>Complete the initial setup wizard</li>
-                                <li>Configure your default preferences</li>
-                                <li>Set up data source permissions</li>
+                                <li>Click on "Apps" in the navigation bar</li>
+                                <li>Select "Visionade" in Apps section</li>
                             </ol>
 
-                            <div class="tip-box">
-                                <strong>Pro Tip:</strong> The setup wizard will guide you through connecting your first data source automatically.
+
                             </div>
+                             <img src="../assets/images/Set Up Visionade.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+
                         </div>
 
                         <div class="step-item" id="connect-data-source">
                             <h3>Connect to Data Source</h3>
                             <p>Configure your data connections to start building reports:</p>
                             <ul>
-                                <li><strong>Jira Projects:</strong> Select projects you want to analyze</li>
-                                <li><strong>Table Grid:</strong> Connect to existing Table Grid instances</li>
-                                <li><strong>JQL Filters:</strong> Use custom Jira Query Language filters</li>
+                                <li><strong>Jira Projects:</strong> Jira data source will be connected automatically in default when you installs Visionade successfully.</li>
+                                <li><strong>Table Grid:</strong> If Table Grid hasn’t been connected, it will display “Connect” button. Click on “Connect” button</li>
                             </ul>
 
                             <div class="warning-box">
-                                <strong>Important:</strong> Ensure you have view permissions for all data sources you want to connect.
+                                <strong>Important:</strong> You can only connect and take data from Table Grid in your current Jira instance.
                             </div>
+                            
+                            <img src="../assets/images/Connect Table Grid.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                           
                         </div>
 
                         <div class="step-item" id="configure-data-set">
@@ -399,27 +399,39 @@
                             <p>Set up your data configuration for reporting:</p>
                             <ol>
                                 <li>Select your primary data source</li>
-                                <li>Choose the fields you want to analyze</li>
-                                <li>Configure data refresh intervals</li>
-                                <li>Set up any necessary filters</li>
-                                <li>Test your data connection</li>
+                                <li>Select Dimensions based on the selected data source</li>
+                                <li>Type JQL query to narrow down data from data source </li>
+                                <li>Preview data based on data set configuration</li>                    
                             </ol>
+
+                            <div class="warning-box">
+                                <strong>Important:</strong> If you leave JQL query blank, it will query data with the following query: <strong><em>project is not empty</em></strong>
+                            </div>
+
+                            <img src="../assets/images/Configure Data Set.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                               
+                               
                         </div>
 
                         <div class="step-item" id="configure-report">
                             <h3>Configure Report</h3>
                             <p>Create custom reports with drag-and-drop simplicity:</p>
                             <ol>
+                                <li>Drag fields to appropriate section</li>
+                                <li>Select aggregations for Values dimensions (sum, average, count, min/max)</li>
+                                <li>Filter by dimensions</li>
                                 <li>Choose your chart type (bar, column, pie, line)</li>
-                                <li>Drag fields to appropriate axes</li>
-                                <li>Add calculations (sum, average, count, min/max)</li>
-                                <li>Configure dimensions and grouping</li>
-                                <li>Preview and adjust your report</li>
+                                <li>Click "Apply Config"</li>
+                                <li>Preview and adjust your report</li>                           
                             </ol>
 
                             <div class="tip-box">
                                 <strong>Pro Tip:</strong> Start with simple bar charts before moving to more complex visualizations.
                             </div>
+
+                            <img src="../assets/images/Configure Report.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+
+                            
                         </div>
 
                         <div class="step-item" id="add-to-dashboard">
@@ -432,6 +444,10 @@
                                 <li>Choose your configured report</li>
                                 <li>Adjust size and position as needed</li>
                             </ol>
+                            </div>
+                            
+                            <img src="../assets/images/Configure Report.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+
                         </div>
                     </div>
                 </section>
@@ -642,7 +658,7 @@
             <p style="margin-bottom: 32px;">Get support and start creating custom Jira reports today</p>
 
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?tab=support" class="btn btn-primary" target="_blank">
+                <a href="https://tablegrid.atlassian.net/servicedesk/customer/portal/2" class="btn btn-primary" target="_blank">
                     Get Support
                 </a>
                 <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn btn-secondary" target="_blank">
