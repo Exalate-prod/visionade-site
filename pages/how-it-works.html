@@ -454,60 +454,157 @@
     <section class="video-section">
         <div class="container">
             <div class="section-header">
-                <h2>Video Tutorials</h2>
-                <p>Step-by-step guides to master Visionade quickly</p>
+            <h2>Video Tutorials</h2>
+            <p>Step-by-step guides to master Visionade quickly</p>
             </div>
 
-            <div class="tooltip">
-                <div class="video-grid coming-soon">
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                            <div class="video-duration">3:00</div>
-                        </div>
-                        <div class="video-info">
-                            <h4>Getting Started</h4>
-                            <p>Complete walkthrough from installation to your first report</p>
-                        </div>
+            <div class="video-grid">
+                <!-- Video cards -->
+                <div class="video-card" data-src="../assets/videos/Configure Data Source.mp4">
+                    <div class="video-thumbnail">
+                    <div class="play-button">▶</div>
+                    <div class="video-duration">--:--</div>
                     </div>
-
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                            <div class="video-duration">5:00</div>
-                        </div>
-                        <div class="video-info">
-                            <h4>Creating Custom Reports</h4>
-                            <p>Learn to build reports with sum, average, and count calculations</p>
-                        </div>
-                    </div>
-
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                            <div class="video-duration">4:00</div>
-                        </div>
-                        <div class="video-info">
-                            <h4>Multi-Dimensional Analysis</h4>
-                            <p>Create pivot tables and advanced chart configurations</p>
-                        </div>
-                    </div>
-
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <div class="play-button">▶</div>
-                            <div class="video-duration">5:00</div>
-                        </div>
-                        <div class="video-info">
-                            <h4>Table Grid Integration Guide</h4>
-                            <p>Connect and visualize Table Grid data alongside Jira</p>
-                        </div>
+                    <div class="video-info">
+                    <h4>Configure Data Source</h4>
+                    <p>Configure your data connections to start building reports</p>
                     </div>
                 </div>
-                <span class="tooltip-text">Coming Soon</span>
+
+                <div class="video-card" data-src="../assets/videos/Configure Data Set.mp4">
+                    <div class="video-thumbnail">
+                    <div class="play-button">▶</div>
+                    <div class="video-duration">--:--</div>
+                    </div>
+                    <div class="video-info">
+                    <h4>Configure Data Set</h4>
+                    <p>Set up your data configuration for reporting</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-src="../assets/videos/Configure Report.mp4">
+                    <div class="video-thumbnail">
+                    <div class="play-button">▶</div>
+                    <div class="video-duration">--:--</div>
+                    </div>
+                    <div class="video-info">
+                    <h4>Configure Report</h4>
+                    <p>Create custom reports with drag-and-drop simplicity</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-src="../assets/videos/Add Reports to Dashboard.mp4">
+                    <div class="video-thumbnail">
+                    <div class="play-button">▶</div>
+                    <div class="video-duration">--:--</div>
+                    </div>
+                    <div class="video-info">
+                    <h4>Add Reports to Jira Dashboard</h4>
+                    <p>Integrate your reports directly into Jira dashboards</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="tutorialVideo" width="1200" height="675" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            margin: auto;
+            background: #000;
+            padding: 10px;
+            border-radius: 8px;
+            width: fit-content;
+            max-width: 90%;
+            position: relative;
+        }
+
+        .modal-content video {
+            border-radius: 6px;
+            display: block;
+            max-height: 80vh;
+        }
+
+        .close {
+            position: absolute;
+            top: -12px; right: -12px;
+            color: #fff;
+            background: #333;
+            border-radius: 50%;
+            padding: 4px 10px;
+            font-size: 24px;
+            cursor: pointer;
+            line-height: 1;
+        }
+    </style>
+
+    <script>
+        const video = document.getElementById("tutorialVideo");
+        const videoCards = document.querySelectorAll(".video-card");
+        const modal = document.getElementById("videoModal");
+        const closeBtn = document.querySelector(".close");
+
+        videoCards.forEach(card => {
+            const src = card.getAttribute("data-src");
+            const durationEl = card.querySelector(".video-duration");
+            const playBtn = card.querySelector(".play-button");
+
+            // Load duration metadata
+            const tempVideo = document.createElement("video");
+            tempVideo.src = src;
+            tempVideo.preload = "metadata";
+
+            tempVideo.addEventListener("loadedmetadata", () => {
+            const duration = Math.floor(tempVideo.duration);
+            const minutes = Math.floor(duration / 60);
+            const seconds = duration % 60;
+            durationEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+            });
+
+            // Play video in modal
+            playBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            video.querySelector("source").setAttribute("src", src);
+            video.load();
+            modal.style.display = "block";
+            video.play();
+            });
+        });
+
+        // Close modal when click X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            video.pause();
+        }
+
+        // Close modal when click outside video
+        window.onclick = function(event) {
+            if (event.target === modal) {
+            modal.style.display = "none";
+            video.pause();
+            }
+        }
+    </script>
 
     <!-- Real Use Cases -->
     <section class="templates-section">
