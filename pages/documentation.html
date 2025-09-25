@@ -308,19 +308,6 @@
         </div>
     </section>
 
-    <!-- Documentation Navigation -->
-    <nav class="docs-nav">
-        <div class="container">
-            <div class="docs-nav-links">
-                <a href="#getting-started" class="docs-nav-link active" onclick="showSection('getting-started')">Getting Started</a>
-                <a href="#setup" class="docs-nav-link" onclick="showSection('setup')">Setup</a>
-                <a href="#data-sources" class="docs-nav-link" onclick="showSection('data-sources')">Data Sources</a>
-                <a href="#reports" class="docs-nav-link" onclick="showSection('reports')">Reports</a>
-                <a href="#dashboards" class="docs-nav-link" onclick="showSection('dashboards')">Dashboards</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Documentation Content -->
     <div class="container">
         <div class="docs-content">
@@ -331,9 +318,9 @@
                     <li><a href="#installation" class="sidebar-link active">Installation</a></li>
                     <li><a href="#setup-visionade">Setting Up Visionade</a></li>
                     <li><a href="#connect-data-source">Connect to Data Source</a></li>
-                    <li><a href="#configure-data-set">Configure Data Set</a></li>
-                    <li><a href="#configure-report">Configure Report</a></li>
                     <li><a href="#configure-dimensions">Configure Dimensions</a></li>
+                    <li><a href="#configure-data-set">Configure Data Set</a></li>
+                    <li><a href="#configure-report">Configure Report</a></li>                  
                     <li><a href="#add-to-dashboard">Add Reports to Dashboard</a></li>
                     <li><a href="#release-history">Release History</a></li>
                     <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -371,10 +358,8 @@
                                 <li>Click on "Apps" in the navigation bar</li>
                                 <li>Select "Visionade" in Apps section</li>
                             </ol>
-
-
-                            </div>
-                             <img src="../assets/images/Set Up Visionade.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                          
+                             <img src="../assets/images/Set Up Visionade.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg); padding-top: 16px;">
 
                         </div>
 
@@ -391,6 +376,23 @@
                             </div>
                             
                             <img src="../assets/images/Connect Table Grid.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                           
+                        </div>
+
+                        <div class="step-item" id="configure-dimensions">
+                            <h3>Configure Dimensions</h3>
+                            <p>Configure your data connections to start building reports:</p>
+                            <ol>
+                                <li>Open Data Sources tab, select a data source to open</li>
+                                <li>Select dimensions by checking the checkbox of each, then click “Save Selected”</li>
+                                <li>Index all dimensions to have last updated data</li>
+                            </ol>
+
+                            <div class="tip-box">
+                                <strong>Tip:</strong> You can create custom dimensions from fields in Data Source, and grouping their values based on data type.
+                            </div>
+                            
+                            <img src="../assets/images/Jira Dimensions.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
                            
                         </div>
 
@@ -443,210 +445,66 @@
                                 <li>Select "Visionade Report" from the list</li>
                                 <li>Choose your configured report</li>
                                 <li>Adjust size and position as needed</li>
-                            </ol>
-                            </div>
+                            </ol>                           
                             
-                            <img src="../assets/images/Configure Report.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);">
+                            <img src="../assets/images/Configure Report.png" style="width: 100%; max-width: 800px; margin: 0 auto 32px; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);   padding-top: 16px">
 
                         </div>
-                    </div>
-                </section>
+                        
+                        <div class="step-item" id="release-history">
+                            <h3>Release History</h3>
+                            <p>Stay updated with the latest Visionade features and improvements:</p>
 
-                <!-- Setup Section -->
-                <section class="docs-section" id="setup">
-                    <h2>Setting Up Visionade</h2>
-                    <p>Configure Visionade for optimal performance and team usage.</p>
+                            <div class="tip-box">
+                                <strong>External Link:</strong> For detailed release notes, visit the <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/352714786/Release+History" target="_blank" style="color: #0052CC;">Visionade Release History</a> on our wiki.
+                            </div>
 
-                    <h3>Initial Configuration</h3>
-                    <p>After installation, complete these setup steps:</p>
-                    <ol>
-                        <li>Access Visionade from the Apps menu</li>
-                        <li>Complete the setup wizard</li>
-                        <li>Configure user permissions</li>
-                        <li>Set default data sources</li>
-                        <li>Test initial connectivity</li>
-                    </ol>
+                        </div>
 
-                    <h3>User Permissions</h3>
-                    <p>Ensure team members have appropriate access:</p>
-                    <ul>
-                        <li><strong>Administrators:</strong> Full configuration access</li>
-                        <li><strong>Report Creators:</strong> Can create and modify reports</li>
-                        <li><strong>Viewers:</strong> Can view existing reports and dashboards</li>
-                    </ul>
-                </section>
+                        <div class="step-item" id="troubleshooting">
+                            <h3>Troubleshooting & Support</h3>
+                            <p>Always getting supported</p>
 
-                <!-- Data Sources Section -->
-                <section class="docs-section" id="data-sources">
-                    <h2>Data Sources & Configuration</h2>
+                            <h4>Common Issues</h4>
 
-                    <h3 id="connect-data-source">Connect to Data Source</h3>
-                    <p>Visionade supports multiple data source types:</p>
+                            <h5>Report Not Loading</h5>
+                            <div class="warning-box">
+                                <strong>Issue:</strong> Report shows "Loading..." or displays no data
+                            </div>
+                            <p><strong>Solutions:</strong></p>
+                            <ol>
+                                <li>Verify data source permissions</li>
+                                <li>Check if filters are too restrictive</li>
+                                <li>Ensure data exists for the selected time period</li>
+                                <li>Try refreshing the page</li>
+                            </ol>
+                      
+                            <h5 style="margin-top: 24px;">Chart Display Issues</h5>
+                            <div class="warning-box">
+                                <strong>Issue:</strong> Charts appear blank or incorrectly formatted
+                            </div>
+                            <p><strong>Solutions:</strong></p>
+                            <ol>
+                                <li>Check field mappings in report configuration</li>
+                                <li>Verify calculation settings</li>
+                                <li>Test with default chart settings</li>
+                                <li>Clear browser cache if needed</li>
+                            </ol>
 
-                    <h4>Jira Projects</h4>
-                    <ul>
-                        <li>Select one or multiple projects</li>
-                        <li>Configure field mappings</li>
-                        <li>Set up data refresh schedules</li>
-                        <li>Apply project-level filters</li>
-                    </ul>
+                            <h4 style="margin-top: 32px;">Getting Help</h4>
+                            <p>Need additional support? Here are your options:</p>
+                            <ul>
+                                <li><strong>Marketplace Support:</strong> Use the support tab on our <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?tab=support" target="_blank" style="color: #0052CC
 
-                    <h4>Table Grid Integration</h4>
-                    <ul>
-                        <li>Connect to existing Table Grid instances</li>
-                        <li>Map Table Grid fields to report dimensions</li>
-                        <li>Configure cross-reference capabilities</li>
-                        <li>Set up real-time synchronization</li>
-                    </ul>
+;">marketplace listing</a></li>
+                                <li><strong>Documentation Wiki:</strong> Visit our comprehensive <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/overview" target="_blank" style="color: #0052CC
 
-                    <h4>JQL Filters</h4>
-                    <ul>
-                        <li>Use advanced Jira Query Language</li>
-                        <li>Create targeted data sets</li>
-                        <li>Apply complex filtering logic</li>
-                        <li>Save and reuse filter configurations</li>
-                    </ul>
-
-                    <h3 id="configure-data-set">Configure Data Set</h3>
-                    <p>Fine-tune your data configuration:</p>
-                    <div class="code-block">
-                        Data Source: PROJECT-KEY
-                        Fields: Status, Assignee, Created Date, Story Points
-                        Filters: Status != Closed AND Created >= -30d
-                        Refresh: Every 15 minutes
-                    </div>
-
-                    <h3 id="configure-dimensions">Configure Dimensions in Data Source</h3>
-                    <p>Set up dimensional analysis for advanced reporting:</p>
-                    <ul>
-                        <li>Primary dimensions (X-axis data)</li>
-                        <li>Secondary dimensions (grouping)</li>
-                        <li>Measure calculations</li>
-                        <li>Time-based dimensions</li>
-                    </ul>
-                </section>
-
-                <!-- Reports Section -->
-                <section class="docs-section" id="reports">
-                    <h2>Creating Reports</h2>
-
-                    <h3 id="configure-report">Configure Report</h3>
-                    <p>Build custom reports with powerful visualization options:</p>
-
-                    <h4>Chart Types Available</h4>
-                    <ul>
-                        <li><strong>Bar Charts:</strong> Compare categories and distributions</li>
-                        <li><strong>Column Charts:</strong> Vertical data comparisons</li>
-                        <li><strong>Pie Charts:</strong> Show parts of a whole</li>
-                        <li><strong>Line Charts:</strong> Display trends over time</li>
-                    </ul>
-
-                    <h4>Custom Calculations</h4>
-                    <p>Available calculation types:</p>
-                    <ul>
-                        <li><strong>Sum:</strong> Total values across data points</li>
-                        <li><strong>Average:</strong> Mean values for analysis</li>
-                        <li><strong>Count:</strong> Number of items or occurrences</li>
-                        <li><strong>Min/Max:</strong> Minimum and maximum values</li>
-                    </ul>
-
-                    <div class="code-block">
-                        Example Report Configuration:
-                        Chart Type: Bar Chart
-                        X-Axis: Issue Status
-                        Y-Axis: COUNT(Issues)
-                        Grouping: Project
-                        Filter: Created >= -30d
-                    </div>
-
-                    <h3>Multi-Dimensional Analysis</h3>
-                    <p>Create complex visualizations with multiple data dimensions:</p>
-                    <ul>
-                        <li>Pivot table functionality</li>
-                        <li>Cross-tabulation of data</li>
-                        <li>Dynamic grouping and filtering</li>
-                        <li>Drill-down capabilities</li>
-                    </ul>
-                </section>
-
-                <!-- Dashboards Section -->
-                <section class="docs-section" id="dashboards">
-                    <h2>Dashboard Management</h2>
-
-                    <h3 id="add-to-dashboard">Add Reports to Jira Dashboard</h3>
-                    <p>Integrate Visionade reports as native Jira dashboard gadgets:</p>
-
-                    <h4>Adding Gadgets</h4>
-                    <ol>
-                        <li>Navigate to your Jira dashboard</li>
-                        <li>Click "Add gadget" or the "+" button</li>
-                        <li>Search for "Visionade" in the gadget list</li>
-                        <li>Select your configured report</li>
-                        <li>Configure gadget size and position</li>
-                    </ol>
-
-                    <h4>Dashboard Layouts</h4>
-                    <ul>
-                        <li>Responsive sizing options</li>
-                        <li>Multiple reports per dashboard</li>
-                        <li>Real-time data updates</li>
-                        <li>Team sharing capabilities</li>
-                    </ul>
-
-                    <h3 id="release-history">Release History</h3>
-                    <p>Stay updated with the latest Visionade features and improvements:</p>
-
-                    <div class="tip-box">
-                        <strong>External Link:</strong> For detailed release notes, visit the <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/352714786/Release+History" target="_blank" style="color: var(--primary-color);">Visionade Release History</a> on our wiki.
-                    </div>
-
-                    <h4>Recent Updates</h4>
-                    <ul>
-                        <li>Enhanced Table Grid integration</li>
-                        <li>Improved chart performance</li>
-                        <li>New calculation options</li>
-                        <li>Dashboard gadget improvements</li>
-                    </ul>
-                </section>
-
-                <!-- Troubleshooting Section -->
-                <section class="docs-section" id="troubleshooting">
-                    <h2>Troubleshooting & Support</h2>
-
-                    <h3>Common Issues</h3>
-
-                    <h4>Report Not Loading</h4>
-                    <div class="warning-box">
-                        <strong>Issue:</strong> Report shows "Loading..." or displays no data
-                    </div>
-                    <p><strong>Solutions:</strong></p>
-                    <ol>
-                        <li>Verify data source permissions</li>
-                        <li>Check if filters are too restrictive</li>
-                        <li>Ensure data exists for the selected time period</li>
-                        <li>Try refreshing the page</li>
-                    </ol>
-
-                    <h4>Chart Display Issues</h4>
-                    <div class="warning-box">
-                        <strong>Issue:</strong> Charts appear blank or incorrectly formatted
-                    </div>
-                    <p><strong>Solutions:</strong></p>
-                    <ol>
-                        <li>Check field mappings in report configuration</li>
-                        <li>Verify calculation settings</li>
-                        <li>Test with default chart settings</li>
-                        <li>Clear browser cache if needed</li>
-                    </ol>
-
-                    <h3>Getting Help</h3>
-                    <p>Need additional support? Here are your options:</p>
-                    <ul>
-                        <li><strong>Marketplace Support:</strong> Use the support tab on our <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?tab=support" target="_blank" style="color: var(--primary-color);">marketplace listing</a></li>
-                        <li><strong>Documentation Wiki:</strong> Visit our comprehensive <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/overview" target="_blank" style="color: var(--primary-color);">Visionade wiki</a></li>
-                        <li><strong>Email Support:</strong> Contact us at support@exalate.com</li>
-                    </ul>
-                </section>
+;">Visionade wiki</a></li>
+                                <li><strong>Email Support:</strong> Contact us at support@exalate.com</li>
+                            </ul>  
+                        </div>
+                    </div>        
+                </section>        
             </main>
         </div>
     </div>
