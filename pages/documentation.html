@@ -570,6 +570,41 @@
                 }
             });
         });
+
+        // Auto-highlight sidebar based on scroll position
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('.step-item[id]');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // Check if section is in viewport (with some offset)
+                if (rect.top <= 200 && rect.bottom >= 200) {
+                    currentSection = section.id;
+                }
+            });
+            
+            if (currentSection) {
+                // Remove active class from all links
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to current section link
+                const activeLink = document.querySelector(`.sidebar-link[href="#${currentSection}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', updateActiveSection);
+        
+        // Initial check
+        document.addEventListener('DOMContentLoaded', updateActiveSection);
     </script>
 </body>
 </html>
