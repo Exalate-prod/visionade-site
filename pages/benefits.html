@@ -322,55 +322,53 @@
                 <p>Enter your team details to see potential savings with Visionade</p>
             </div>
 
-            <div class="tooltip">
-                <div class="roi-calculator coming-soon">
-                    <h3 style="margin-bottom: 32px; text-align: center; color: var(--text-dark);">ROI Calculator</h3>
+            <div class="roi-calculator">
+                <h3 style="margin-bottom: 32px; text-align: center; color: var(--text-dark);">ROI Calculator</h3>
 
-                    <div class="calculator-form">
-                        <div class="form-group">
-                            <label for="teamSize">Team Size</label>
-                            <input type="number" id="teamSize" value="15" min="1" max="1000">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="hourlyRate">Average Hourly Rate ($)</label>
-                            <input type="number" id="hourlyRate" value="75" min="10" max="500">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="reportingHours">Hours/Week on Manual Reporting</label>
-                            <input type="number" id="reportingHours" value="12" min="1" max="40">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="visionadeCost">Visionade Monthly Cost ($)</label>
-                            <input type="number" id="visionadeCost" value="5" min="5" max="100">
-                        </div>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="teamSize">Team Size</label>
+                        <input type="number" id="teamSize" value="15" min="1" max="1000">
                     </div>
 
-                    <div class="calculator-results" id="calculatorResults">
-                        <h4 style="margin-bottom: 16px;">Your Potential Savings</h4>
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <div class="result-value">$9,000</div>
-                                <div class="result-label">Weekly Savings</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-value">$468k</div>
-                                <div class="result-label">Annual Savings</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-value">23,400%</div>
-                                <div class="result-label">Annual ROI</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-value">2</div>
-                                <div class="result-label">Days to Payback</div>
-                            </div>
+                    <div class="form-group">
+                        <label for="hourlyRate">Average Hourly Rate ($)</label>
+                        <input type="number" id="hourlyRate" value="75" min="10" max="500">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reportingHours">Hours/Week on Manual Reporting</label>
+                        <input type="number" id="reportingHours" value="12" min="1" max="40">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visionadeCost">Visionade Monthly Cost ($)</label>
+                        <input type="number" id="visionadeCost" value="5" min="5" max="100">
+                    </div>
+                </div>
+
+                <div class="calculator-results" id="calculatorResults">
+                    <h4 style="margin-bottom: 16px;">Your Potential Savings</h4>
+                    <p style="margin-bottom: 24px; font-size: 0.9rem; color: white; opacity: 0.9;">*Based on industry standard 60% time savings from automated reporting</p>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-value" id="weeklySavings">$9,000</div>
+                            <div class="result-label">Weekly Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="annualSavings">$468k</div>
+                            <div class="result-label">Annual Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="roiPercentage">23,400%</div>
+                            <div class="result-label">Annual ROI</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="paybackPeriod">2</div>
+                            <div class="result-label">Days to Payback</div>
                         </div>
                     </div>
                 </div>
-                <span class="tooltip-text">Coming Soon</span>
             </div>
         </div>
     </section>
@@ -684,8 +682,8 @@
             const reportingHours = parseInt(document.getElementById('reportingHours').value) || 0;
             const visionadeCost = parseInt(document.getElementById('visionadeCost').value) || 0;
 
-            // Assumptions: 80% time savings, 52 weeks per year
-            const timeSavingsPercentage = 0.8;
+            // Assumptions: 60% time savings (industry standard), 52 weeks per year
+            const timeSavingsPercentage = 0.6;
             const weeksPerYear = 52;
 
             // Calculate savings
@@ -699,14 +697,26 @@
             const paybackDays = visionadeCost > 0 ? Math.ceil((visionadeCost / (weeklySavings / 7))) : 0;
 
             // Update display
-            document.getElementById('weeklySavings').textContent = '$' + weeklySavings.toLocaleString();
+            document.getElementById('weeklySavings').textContent = '$' + Math.round(weeklySavings).toLocaleString();
             document.getElementById('annualSavings').textContent = '$' + Math.round(annualSavings/1000) + 'k';
             document.getElementById('roiPercentage').textContent = Math.round(roiPercentage).toLocaleString() + '%';
             document.getElementById('paybackPeriod').textContent = paybackDays;
         }
 
         // Initialize calculator on page load
-        document.addEventListener('DOMContentLoaded', calculateROI);
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateROI();
+            
+            // Add event listeners to all input fields for real-time calculation
+            const inputFields = ['teamSize', 'hourlyRate', 'reportingHours', 'visionadeCost'];
+            inputFields.forEach(fieldId => {
+                const input = document.getElementById(fieldId);
+                if (input) {
+                    input.addEventListener('input', calculateROI);
+                    input.addEventListener('change', calculateROI);
+                }
+            });
+        });
 
         // Animate metrics on scroll
         const observerOptions = {
