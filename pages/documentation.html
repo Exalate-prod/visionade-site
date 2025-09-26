@@ -25,37 +25,6 @@
             text-align: center;
         }
 
-        .docs-search {
-            max-width: 600px;
-            margin: 32px auto 0;
-            position: relative;
-        }
-
-        .docs-search input {
-            width: 100%;
-            padding: 16px 50px 16px 20px;
-            border: 2px solid var(--border-light);
-            border-radius: var(--radius-md);
-            font-size: 16px;
-            transition: border-color 0.2s ease;
-        }
-
-        .docs-search input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .docs-search button {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: var(--text-medium);
-        }
 
         .docs-nav {
             background: white;
@@ -301,10 +270,6 @@
             <h1>Documentation & Help Center</h1>
             <p class="subtitle">Everything you need to get started with Visionade and master custom Jira reports and dashboards</p>
 
-            <div class="docs-search">
-                <input type="text" placeholder="Search documentation..." id="docsSearch">
-                <button type="button" onclick="searchDocs()">🔍</button>
-            </div>
         </div>
     </section>
 
@@ -316,14 +281,14 @@
                 <h4>Quick Navigation</h4>
                 <ul>
                     <li><a href="#installation" class="sidebar-link active">Installation</a></li>
-                    <li><a href="#setup-visionade">Setting Up Visionade</a></li>
-                    <li><a href="#connect-data-source">Connect to Data Source</a></li>
-                    <li><a href="#configure-dimensions">Configure Dimensions</a></li>
-                    <li><a href="#configure-data-set">Configure Data Set</a></li>
-                    <li><a href="#configure-report">Configure Report</a></li>                  
-                    <li><a href="#add-to-dashboard">Add Reports to Dashboard</a></li>
-                    <li><a href="#release-history">Release History</a></li>
-                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#setup-visionade" class="sidebar-link">Setting Up Visionade</a></li>
+                    <li><a href="#connect-data-source" class="sidebar-link">Connect to Data Source</a></li>
+                    <li><a href="#configure-dimensions" class="sidebar-link">Configure Dimensions</a></li>
+                    <li><a href="#configure-data-set" class="sidebar-link">Configure Data Set</a></li>
+                    <li><a href="#configure-report" class="sidebar-link">Configure Report</a></li>                  
+                    <li><a href="#add-to-dashboard" class="sidebar-link">Add Reports to Dashboard</a></li>
+                    <li><a href="#release-history" class="sidebar-link">Release History</a></li>
+                    <li><a href="#troubleshooting" class="sidebar-link">Troubleshooting</a></li>
                 </ul>
             </aside>
 
@@ -584,28 +549,20 @@
             document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
         }
 
-        function searchDocs() {
-            const query = document.getElementById('docsSearch').value.toLowerCase();
-            const sections = document.querySelectorAll('.docs-section');
-
-            if (!query) return;
-
-            sections.forEach(section => {
-                const content = section.textContent.toLowerCase();
-                if (content.includes(query)) {
-                    section.classList.add('active');
-                    section.innerHTML = section.innerHTML.replace(
-                        new RegExp(query, 'gi'),
-                        `<mark>$&</mark>`
-                    );
-                }
-            });
-        }
 
         // Smooth scrolling for sidebar links
         document.querySelectorAll('.sidebar-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                // Remove active class from all sidebar links
+                document.querySelectorAll('.sidebar-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
                 const targetId = this.getAttribute('href').substring(1);
                 const target = document.getElementById(targetId);
                 if (target) {
