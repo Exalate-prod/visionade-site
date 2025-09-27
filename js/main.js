@@ -74,45 +74,38 @@ function showChart(chartType) {
     demoButtons.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 
-    // Chart configurations
+    // Chart configurations with actual images
     const charts = {
         bar: {
             title: 'Sprint Velocity - Bar Chart',
             description: 'Story points completed per sprint',
-            visual: '📊'
+            image: 'assets/images/Highlight_1.png'
         },
         pie: {
             title: 'Issue Distribution - Pie Chart',
             description: 'Issues by status across all projects',
-            visual: '🥧'
+            image: 'assets/images/Highlight_2.png'
         },
         line: {
             title: 'Burndown Trend - Line Chart',
             description: 'Sprint progress over time',
-            visual: '📈'
+            image: 'assets/images/Highlight_3.png'
         },
         column: {
             title: 'Team Performance - Column Chart',
             description: 'Completed issues by team member',
-            visual: '📋'
+            image: 'assets/images/Highlight_4.png'
         }
     };
 
     const chart = charts[chartType];
 
-    // Simulate chart rendering
+    // Update demo area with chart image
     demoArea.innerHTML = `
-        <div style="text-align: center; padding: 40px;">
-            <div style="font-size: 4rem; margin-bottom: 16px;">${chart.visual}</div>
-            <h4 style="margin-bottom: 8px; color: var(--primary-color);">${chart.title}</h4>
-            <p style="color: var(--text-medium); margin-bottom: 24px;">${chart.description}</p>
-            <div style="background: linear-gradient(45deg, #0052CC20, #00C85320); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                <p style="color: var(--primary-color); font-weight: 600;">Interactive ${chartType.toUpperCase()} Chart</p>
-            </div>
-            <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-light);">
-                <em>In the real app, this would be a fully interactive chart with live data</em>
-            </p>
-        </div>
+        <img src="${chart.image}" alt="Visionade ${chart.title}" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+        <p style="text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--text-light);">
+            <em>${chart.description}</em>
+        </p>
     `;
 
     // Track demo interaction

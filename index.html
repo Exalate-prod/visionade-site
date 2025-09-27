@@ -131,23 +131,20 @@
                 <p>See how easy it is to create custom reports and dashboards</p>
             </div>
 
-            <div class="tooltip">
-                <div class="demo-container coming-soon">
-                    <div class="demo-controls">
-                        <button class="demo-btn active">Bar Chart</button>
-                        <button class="demo-btn">Pie Chart</button>
-                        <button class="demo-btn">Line Chart</button>
-                        <button class="demo-btn">Column Chart</button>
-                    </div>
-
-                    <div class="demo-area" id="demoArea">
-                        <img src="assets/images/Highlight 1.png" alt="Visionade Dashboard Demo" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
-                        <p style="text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--text-light);">
-                            <em>Real Visionade interface showing custom Jira reports and charts</em>
-                        </p>
-                    </div>
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <button class="demo-btn active" onclick="showChart('bar')">Bar Chart</button>
+                    <button class="demo-btn" onclick="showChart('pie')">Pie Chart</button>
+                    <button class="demo-btn" onclick="showChart('line')">Line Chart</button>
+                    <button class="demo-btn" onclick="showChart('column')">Column Chart</button>
                 </div>
-                <span class="tooltip-text">Coming Soon</span>
+
+                <div class="demo-area" id="demoArea">
+                    <img src="assets/images/Highlight_1.png" alt="Visionade Dashboard Demo" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                    <p style="text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--text-light);">
+                        <em>Real Visionade interface showing custom Jira reports and charts</em>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
