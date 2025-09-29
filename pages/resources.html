@@ -87,14 +87,45 @@
             background: white;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-md);
-            overflow: hidden;
+            overflow: visible;
             transition: all 0.2s ease;
             cursor: pointer;
+            position: relative;
         }
 
         .template-card:hover {
             border-color: var(--primary-color);
             box-shadow: var(--shadow-md);
+        }
+
+        /* Tooltip cho template cards */
+        .template-card .tooltip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .template-card .tooltip .tooltip-text {
+            bottom: 105%;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            background-color: #2F372E;
+            font-weight: 600;
+        }
+
+        .template-card .tooltip .tooltip-text::after {
+            left: 50%;
+            margin-left: -5px;
+            border-color: #2F372E transparent transparent transparent;
+        }
+
+        .template-card:hover .tooltip .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
 
         .template-preview {
@@ -118,6 +149,7 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
+
 
         .template-info {
             padding: 20px;
@@ -148,13 +180,43 @@
         .blog-card {
             background: white;
             border-radius: var(--radius-md);
-            overflow: hidden;
+            overflow: visible;
             box-shadow: var(--shadow-sm);
             transition: transform 0.2s ease;
+            position: relative;
         }
 
         .blog-card:hover {
             transform: translateY(-4px);
+        }
+
+        .blog-card .tooltip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .blog-card .tooltip .tooltip-text {
+            bottom: 105%;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            background-color: #2F372E;
+            font-weight: 600;
+        }
+
+        .blog-card .tooltip .tooltip-text::after {
+            left: 50%;
+            margin-left: -5px;
+            border-color: #2F372E transparent transparent transparent;
+        }
+
+        .blog-card:hover .tooltip .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
 
         .blog-image {
@@ -433,6 +495,9 @@
                             <span class="template-tag">Analytics</span>
                         </div>
                     </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
+                    </div>
                 </div>
 
                 <div class="template-card">
@@ -446,6 +511,9 @@
                             <span class="template-tag">Targeted</span>
                         </div>
                     </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
+                    </div>
                 </div>
 
                 <div class="template-card">
@@ -458,6 +526,9 @@
                             <span class="template-tag">Multi-Dimensional</span>
                             <span class="template-tag">Analysis</span>
                         </div>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
                     </div>
                 </div>
 
@@ -474,6 +545,9 @@
                             <span class="template-tag">Integration</span>
                             <span class="template-tag">Comprehensive</span>
                         </div>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -501,6 +575,9 @@
                         <p class="blog-excerpt">Discover proven strategies to eliminate manual reporting and automate your Jira analytics workflow.</p>
                         <div class="read-time">5 min read</div>
                     </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
+                    </div>
                 </article>
 
                 <article class="blog-card">
@@ -514,6 +591,9 @@
                         <h3 class="blog-title">The Hidden Costs of Manual Project Reporting</h3>
                         <p class="blog-excerpt">Calculate the true cost of manual reporting and see how automation can transform your bottom line.</p>
                         <div class="read-time">7 min read</div>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
                     </div>
                 </article>
 
@@ -529,6 +609,9 @@
                         <p class="blog-excerpt">Learn how no-code analytics platforms are enabling non-technical users to create powerful insights.</p>
                         <div class="read-time">6 min read</div>
                     </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
+                    </div>
                 </article>
 
                 <article class="blog-card">
@@ -542,6 +625,9 @@
                         <h3 class="blog-title">Table Grid + Visionade: The Perfect Combination</h3>
                         <p class="blog-excerpt">Explore the unique benefits of combining Table Grid with Visionade for enhanced data visualization.</p>
                         <div class="read-time">8 min read</div>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
                     </div>
                 </article>
 
@@ -557,6 +643,9 @@
                         <p class="blog-excerpt">Master the art of dashboard design with these proven principles for creating impactful visualizations.</p>
                         <div class="read-time">10 min read</div>
                     </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
+                    </div>
                 </article>
 
                 <article class="blog-card">
@@ -570,6 +659,9 @@
                         <h3 class="blog-title">From Excel Hell to Dashboard Heaven</h3>
                         <p class="blog-excerpt">A real customer journey from manual Excel reporting to automated, real-time dashboards.</p>
                         <div class="read-time">12 min read</div>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltip-text">Coming Soon</span>
                     </div>
                 </article>
             </div>
