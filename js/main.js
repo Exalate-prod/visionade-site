@@ -78,22 +78,22 @@ function showChart(chartType) {
     const charts = {
         bar: {
             title: 'Sprint Velocity - Bar Chart',
-            description: 'Story points completed per sprint',
+            description: 'Sales Revenue of Menu Items by Order Types',
             image: 'assets/images/Highlight_1.png'
         },
         pie: {
             title: 'Issue Distribution - Pie Chart',
-            description: 'Issues by status across all projects',
+            description: 'Number of Sold Items by Size',
             image: 'assets/images/Highlight_2.png'
         },
         line: {
             title: 'Burndown Trend - Line Chart',
-            description: 'Sprint progress over time',
+            description: 'Ordering Trends over time',
             image: 'assets/images/Highlight_3.png'
         },
         column: {
             title: 'Team Performance - Column Chart',
-            description: 'Completed issues by team member',
+            description: 'Sales Revenue of Menu Items by Size',
             image: 'assets/images/Highlight_4.png'
         }
     };
