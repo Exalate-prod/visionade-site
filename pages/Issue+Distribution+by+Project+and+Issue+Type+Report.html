@@ -364,7 +364,7 @@
         }
 
         .result-box {
-            background: linear-gradient(135deg, #10B981, #059669);
+            background: linear-gradient(135deg, #ffffff, #ffffff);
             color: white;
             padding: 24px;
             border-radius: var(--radius-lg);
@@ -372,7 +372,7 @@
         }
 
         .result-box h4 {
-            color: white;
+            color: var(--text-dark);
             margin-bottom: 12px;
         }
 
@@ -697,29 +697,17 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Configure Jira connection settings if not already connected</p>
+                                    <p>Click <strong>Select Dimensions</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>Click <strong>Select Dimensions</strong> button</p>
+                                    <p>Select dimensions and then click <strong>Save Selected</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
-                                <div class="step-description">
-                                    <p>Select key dimensions: <strong>Project</strong>, <strong>Issue Type</strong>, <strong>Status</strong>, <strong>Priority</strong>, <strong>Assignee</strong>, and <strong>Created Date</strong></p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">5</div>
-                                <div class="step-description">
-                                    <p>Click <strong>Save Selected</strong> to save the dimension configuration</p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">6</div>
                                 <div class="step-description">
                                     <p>Click <strong>Index All Dimensions</strong> button to reindex the data of all selected dimensions, ensuring it is fully up to date.</p>
                                 </div>
@@ -740,7 +728,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Enter <strong>"Issue Distribution Data"</strong> for <strong>Data Set Name</strong></p>
+                                    <p>Enter <strong>"Project SM"</strong> for <strong>Data Set Name</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -752,7 +740,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>In <strong>Select Project</strong> field, select <strong>"All Projects"</strong> or specific projects you want to analyze</p>
+                                    <p>In <strong>Select Dimensions</strong> section, <strong>select/deselect</strong> dimensions based on your needs</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -760,7 +748,7 @@
                                 <div class="step-description">
                                     <p>Enter <strong>JQL query</strong> to filter the issues you want to analyze:</p>
                                     <div class="code-block">
-                                        <code>project IN (VIS1) AND created >= -30d</code>
+                                        <code>project IN (SM)</code>
                                     </div>
                                     <p>Then click <strong>"Run Query"</strong> or <strong>"Preview"</strong> button to filter and preview data in <strong>Data Preview</strong> section</p>
                                 </div>
@@ -787,13 +775,13 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Enter <strong>"Issue Distribution by Project and Type"</strong> for <strong>Report Name</strong> and click <strong>Next</strong> button</p>
+                                    <p>Enter <strong>"Issue Distribution Report"</strong> for <strong>Report Name</strong> and click <strong>Next</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>In <strong>Table View</strong> tab, select data set <strong>"Issue Distribution Data"</strong> that we have configured</p>
+                                    <p>In <strong>Table View</strong> tab, select data set <strong>"Project SM"</strong> that we have configured</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -824,37 +812,29 @@
                             <div class="step-row">
                                 <div class="step-number-small">8</div>
                                 <div class="step-description">
-                                    <p>Drag dimension <strong>Created Date</strong> to dimension <strong>Filters</strong> to filter issues created in March 2025</p>
+                                    <p>Drag dimension <strong>Created Date</strong> to dimension <strong>Filters</strong> to filter issues created in 2025</p>
+                                    <p>Click on <strong>Created Date</strong> dimension to select filter condition <strong>Date Is After</strong> and enter value <strong>"2025-01-01"</strong></p>
+                                    <div class="info-box">
+                                        <p><strong>📅 Date Format:</strong> Use format <code>YYYY-MM-DD</code></p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">9</div>
                                 <div class="step-description">
-                                    <p>Click on <strong>Created Date</strong> dimension to select filter condition <strong>Date Is Between</strong></p>
+                                    <p>Select <strong>Pie Chart</strong> in section <strong>Visualization</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">10</div>
                                 <div class="step-description">
-                                    <p>Enter <strong>"Mar 1 2025"</strong> and <strong>"Mar 31 2025"</strong> in the Date fields and click <strong>OK</strong></p>
+                                    <p>Click <strong>Apply Config</strong> to generate report</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">11</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Pie Chart</strong> in section <strong>Visualization</strong></p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">12</div>
-                                <div class="step-description">
-                                    <p>Click <strong>Apply Config</strong> to generate report</p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">13</div>
-                                <div class="step-description">
-                                    <p>Click <strong>"Save"</strong> to save report configuration</p>
+                                    <p>Click <strong>Save</strong> to save report configuration</p>
                                 </div>
                             </div>
                         </div>
@@ -917,6 +897,8 @@
                             <h4>🎉 Success!</h4>
                             <p>Issue distribution report is displayed on Jira Dashboard.</p>
                             <p>You now have a dynamic, real-time report that shows issue distribution across projects and issue types as a pie chart, helping you identify workload patterns and optimize resource allocation.</p>
+                            <img src="../assets/images/Issue_Distribution_Report.png" style="width: 100%; margin: 0 auto 0; display: block; border-radius: 12px; box-shadow: var(--shadow-lg);   padding-top: 16px">
+
                         </div>
                     </div>
                 </section>
