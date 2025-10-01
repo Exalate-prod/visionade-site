@@ -760,7 +760,7 @@
                                 <div class="step-description">
                                     <p>Enter <strong>JQL query</strong> to filter the issues you want to analyze:</p>
                                     <div class="code-block">
-                                        <code>project IN (VIS1)</code>
+                                        <code>project IN (VIS1) AND created >= -30d</code>
                                     </div>
                                     <p>Then click <strong>"Run Query"</strong> or <strong>"Preview"</strong> button to filter and preview data in <strong>Data Preview</strong> section</p>
                                 </div>
@@ -781,100 +781,80 @@
                             <div class="step-row">
                                 <div class="step-number-small">1</div>
                                 <div class="step-description">
-                                    <p>Click on the <strong>Reports</strong> tab</p>
+                                    <p>Open <strong>Reports</strong> tab, click <strong>Create Report</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Click the <strong>Create Report</strong> button</p>
+                                    <p>Enter <strong>"Issue Distribution by Project and Type"</strong> for <strong>Report Name</strong> and click <strong>Next</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>Fill in the name and click the <strong>Create</strong> button</p>
+                                    <p>In <strong>Table View</strong> tab, select data set <strong>"Issue Distribution Data"</strong> that we have configured</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>Click on the <strong>Source</strong> section</p>
+                                    <p>Open <strong>Analytics & Pivot</strong> tab to start configuring report</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">5</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Jira</strong> as the data source</p>
+                                    <p>Drag dimension <strong>Issue Type</strong> to section <strong>Rows</strong> to view issue types as row headers</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">6</div>
                                 <div class="step-description">
-                                    <p>Enter a <strong>JQL query</strong> in the JQL field and click <strong>Search</strong> to filter issues:</p>
-                                    <div class="code-block">
-                                        <code>project IN (VIS1)</code>
-                                    </div>
+                                    <p>Drag dimension <strong>Project</strong> to section <strong>Columns</strong> to view projects as column headers</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">7</div>
                                 <div class="step-description">
-                                    <p>Drag the <strong>Issue Type</strong> dimension to the <strong>Rows</strong> section to view issue types as row headers</p>
+                                    <p>Drag dimension <strong>Issue Key</strong> to section <strong>Values</strong> to count issues in each cell</p>
+                                    <p>Select <strong>Count</strong> in <strong>Aggregation</strong> field</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">8</div>
                                 <div class="step-description">
-                                    <p>Drag the <strong>Project</strong> dimension to the <strong>Columns</strong> section to view projects as column headers</p>
+                                    <p>Drag dimension <strong>Created Date</strong> to dimension <strong>Filters</strong> to filter issues created in March 2025</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">9</div>
                                 <div class="step-description">
-                                    <p>Drag the <strong>Issue Key</strong> dimension to the <strong>Values</strong> section</p>
+                                    <p>Click on <strong>Created Date</strong> dimension to select filter condition <strong>Date Is Between</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">10</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Count</strong> in the <strong>Aggregation</strong> field to view the number of issues</p>
+                                    <p>Enter <strong>"Mar 1 2025"</strong> and <strong>"Mar 31 2025"</strong> in the Date fields and click <strong>OK</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">11</div>
                                 <div class="step-description">
-                                    <p>Drag the <strong>Created Date</strong> dimension to the <strong>Filters</strong> section to filter issues created in March 2025</p>
+                                    <p>Select <strong>Pie Chart</strong> in section <strong>Visualization</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">12</div>
                                 <div class="step-description">
-                                    <p>Click on the <strong>Filter By</strong> field</p>
+                                    <p>Click <strong>Apply Config</strong> to generate report</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">13</div>
                                 <div class="step-description">
-                                    <p>Select the <strong>Is Between</strong> condition</p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">14</div>
-                                <div class="step-description">
-                                    <p>Enter <strong>"Mar 1 2025"</strong> and <strong>"Mar 31 2025"</strong> in the Date fields and click <strong>OK</strong></p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">15</div>
-                                <div class="step-description">
-                                    <p>Select <strong>Pie Chart</strong> in the <strong>Visualization</strong> section</p>
-                                </div>
-                            </div>
-                            <div class="step-row">
-                                <div class="step-number-small">16</div>
-                                <div class="step-description">
-                                    <p>Click <strong>Save Changes</strong> to save the report</p>
+                                    <p>Click <strong>"Save"</strong> to save report configuration</p>
                                 </div>
                             </div>
                         </div>
@@ -887,43 +867,45 @@
                             <div class="step-row">
                                 <div class="step-number-small">1</div>
                                 <div class="step-description">
-                                    <p>Open the <strong>Dashboards</strong> screen and click the <strong>Create dashboard</strong> button</p>
+                                    <p>Open <strong>Dashboards</strong> screen and click <strong>Create dashboard</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Fill in the name and click <strong>Save</strong></p>
+                                    <p>Fill in <strong>Name</strong> and click <strong>Save</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>Click the <strong>Edit</strong> button to edit the dashboard</p>
+                                    <p>Click <strong>Edit</strong> button to edit the dashboard</p>
+                                    <p>Search <strong>"Visionade"</strong> to search gadget</p>
+                                    <p>Click <strong>Add</strong> button on <strong>Visionade Report</strong> gadget</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>Search for <strong>"Visionade"</strong> to find the gadget</p>
+                                    <p>Select <strong>Issue Distribution Report</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">5</div>
                                 <div class="step-description">
-                                    <p>Click the <strong>Add</strong> button on the <strong>Visionade Report</strong> gadget</p>
+                                    <p>Click <strong>"Save Changes"</strong> to save changes on gadget</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">6</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Issue Distribution Report</strong></p>
+                                    <p>Click <strong>"Change layout"</strong> and select <strong>"One column"</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">7</div>
                                 <div class="step-description">
-                                    <p>Click <strong>Done</strong> to save the dashboard</p>
+                                    <p>Click <strong>Done</strong> to save dashboard</p>
                                 </div>
                             </div>
                         </div>
