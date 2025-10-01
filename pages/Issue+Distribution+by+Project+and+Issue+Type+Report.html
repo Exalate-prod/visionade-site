@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Burger Restaurant Sales by Menu Item Report | Visionade Tutorial</title>
-    <meta name="description" content="Learn how to generate comprehensive burger restaurant sales reports by menu item using Visionade's powerful reporting features.">
-    <meta name="keywords" content="Visionade tutorial, restaurant sales report, menu item analysis, Jira reporting, business intelligence">
+    <title>Issue Distribution by Project and Issue Type Report | Visionade Tutorial</title>
+    <meta name="description" content="Learn how to generate comprehensive issue distribution reports by project and issue type using Visionade's powerful reporting features.">
+    <meta name="keywords" content="Visionade tutorial, issue distribution report, project analysis, Jira reporting, business intelligence">
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Generate Burger Restaurant Sales by Menu Item Report | Visionade Tutorial">
-    <meta property="og:description" content="Step-by-step tutorial on creating detailed restaurant sales reports with Visionade.">
+    <meta property="og:title" content="Issue Distribution by Project and Issue Type Report | Visionade Tutorial">
+    <meta property="og:description" content="Step-by-step tutorial on creating detailed issue distribution reports with Visionade.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://visionade.app/pages/Generate+Burger+Restaurant+Sales+by+Menu+Item+Report">
+    <meta property="og:url" content="https://visionade.app/pages/Issue+Distribution+by+Project+and+Issue+Type+Report">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -525,15 +525,15 @@
         <div class="tutorial-container">
             <a href="../index.html">Home</a> ›
             <a href="../pages/resources.html">Resources</a> ›
-            <span>Generate Burger Restaurant Sales by Menu Item Report</span>
+            <span>Issue Distribution by Project and Issue Type Report</span>
         </div>
     </section>
 
     <!-- Tutorial Header -->
     <section class="tutorial-header">
         <div class="tutorial-container">
-            <h1>Generate Burger Restaurant Sales by Menu Item Report</h1>
-            <p>Learn how to create comprehensive restaurant sales reports by menu item using Visionade's powerful reporting and analytics features. This step-by-step tutorial will guide you through the entire process.</p>
+            <h1>Issue Distribution by Project and Issue Type Report</h1>
+            <p>Learn how to create comprehensive issue distribution reports by project and issue type using Visionade's powerful reporting and analytics features. This step-by-step tutorial will guide you through the entire process.</p>
         </div>
     </section>
 
@@ -546,7 +546,7 @@
 
             <div class="share-section">
                 <span style="color: var(--text-medium); font-size: 0.9rem;">Share this tutorial:</span>
-                <input type="text" class="share-url" id="shareUrl" value="https://visionade.app/pages/Generate+Burger+Restaurant+Sales+by+Menu+Item+Report" readonly>
+                <input type="text" class="share-url" id="shareUrl" value="https://visionade.app/pages/Issue+Distribution+by+Project+and+Issue+Type+Report" readonly>
                 <button class="share-btn" onclick="copyToClipboard()">📋 Copy Link</button>
             </div>
         </div>
@@ -558,11 +558,11 @@
             <article class="tutorial-content">
                 <div class="tutorial-intro">
                     <div class="author-info">
-                        <span class="duration">📖 5 min read</span>
-                        <span class="difficulty">📊 Beginner</span>
+                        <span class="duration">📖 6 min read</span>
+                        <span class="difficulty">📊 Intermediate</span>
                     </div>
 
-                    <p class="tutorial-description">This document provides a step-by-step guide to generating a sales report for a burger restaurant, focusing on revenue breakdown by menu item. Using <strong>Visionade</strong> and <strong>Table Grid</strong> as data source, restaurant owners and managers can gain insights into their best-selling items, track revenue trends, and optimize their menu for better profitability.</p>
+                    <p class="tutorial-description">This document provides a step-by-step guide to generating an issue distribution report by project and issue type. Using <strong>Visionade</strong> and <strong>Jira</strong> as data source, project managers and team leads can gain insights into their project workload distribution, track issue types across different projects, and optimize resource allocation for better project management.</p>
                 </div>
 
                 <div class="table-of-contents">
@@ -574,10 +574,10 @@
                         <li><a href="#use-case-flow">Use Case Flow Diagram</a></li>
                         <li><a href="#implementation">Step-by-Step Implementation</a>
                             <ul>
-                                <li><a href="#step1">1. Configure Table Grid Data Source</a></li>
+                                <li><a href="#step1">1. Configure Jira Data Source</a></li>
                                 <li><a href="#step2">2. Configure Data Set</a></li>
-                                <li><a href="#step3">3. Configure Revenue Report</a></li>
-                                <li><a href="#step4">4. Add Revenue Report to Jira Dashboard</a></li>
+                                <li><a href="#step3">3. Configure Issue Distribution Report</a></li>
+                                <li><a href="#step4">4. Add Report to Jira Dashboard</a></li>
                                 <li><a href="#step5">5. Result</a></li>
                             </ul>
                         </li>
@@ -587,12 +587,12 @@
 
                 <section id="introduction" class="tutorial-section">
                     <h2>📊 Introduction</h2>
-                    <p>Understanding which menu items drive the most revenue is crucial for a burger restaurant. A sales report by menu item allows business owners to make data-driven decisions, such as adjusting pricing, optimizing inventory, and launching targeted promotions. Visionade enables seamless data extraction from Table Grid and visualization within Jira Dashboards for real-time tracking.</p>
+                    <p>Understanding how issues are distributed across projects and issue types is crucial for effective project management. An issue distribution report allows project managers to identify workload imbalances, track issue type patterns, and make data-driven decisions about resource allocation and project prioritization. Visionade enables seamless data extraction from Jira and visualization within Jira Dashboards for real-time tracking.</p>
 
-                    <p>Orders will be managed on Issue Screen and displayed in grids like this:</p>
+                    <p>Issues will be managed in Jira and displayed in distribution reports like this:</p>
 
                     <div class="info-box">
-                        <p><strong>💡 Pro Tip:</strong> This tutorial shows how to transform raw order data into actionable business insights using Visionade's powerful reporting capabilities.</p>
+                        <p><strong>💡 Pro Tip:</strong> This tutorial shows how to transform raw Jira issue data into actionable project management insights using Visionade's powerful reporting capabilities.</p>
                     </div>
                 </section>
 
@@ -609,20 +609,20 @@
 
                         <div class="prerequisite-card">
                             <div class="card-icon">🔗</div>
-                            <h4>Table Grid Connection</h4>
-                            <p><strong>Table Grid is connected</strong> and contains sales transaction data.</p>
+                            <h4>Jira Connection</h4>
+                            <p><strong>Jira is connected</strong> and contains project and issue data across multiple projects.</p>
                         </div>
 
                         <div class="prerequisite-card">
                             <div class="card-icon">👤</div>
                             <h4>Admin Access</h4>
-                            <p><strong>User has Jira Admin permission</strong> and has access Jira Dashboards.</p>
+                            <p><strong>User has Jira Admin permission</strong> and has access to Jira Dashboards.</p>
                         </div>
 
                         <div class="prerequisite-card">
                             <div class="card-icon">📋</div>
                             <h4>Data Structure</h4>
-                            <p><strong>Sales data structure</strong> includes key fields such as Item Name, Ordered date, Quantity sold, Price, and Total revenue.</p>
+                            <p><strong>Issue data structure</strong> includes key fields such as Project, Issue Type, Status, Priority, and Assignee.</p>
                         </div>
                     </div>
                 </section>
@@ -630,8 +630,9 @@
                 <section id="post-condition" class="tutorial-section">
                     <h2>🎯 Post-condition</h2>
                     <ul class="success-list">
-                        <li>✅ <strong>A dynamic sales report by menu item</strong> will be displayed on the Jira Dashboard.</li>
+                        <li>✅ <strong>A dynamic issue distribution report by project and issue type</strong> will be displayed on the Jira Dashboard.</li>
                         <li>✅ <strong>Configured report</strong> is saved in Reports list.</li>
+                        <li>✅ <strong>Visual charts and tables</strong> show distribution patterns across projects and issue types.</li>
                     </ul>
                 </section>
 
@@ -641,8 +642,8 @@
                         <div class="flow-step">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                <h4>Configure Table Grid Source</h4>
-                                <p>Set up data source connection</p>
+                                <h4>Configure Jira Source</h4>
+                                <p>Set up Jira data source connection</p>
                             </div>
                         </div>
                         <div class="flow-arrow">→</div>
@@ -676,19 +677,19 @@
                     <h2>🚀 Step-by-Step Implementation</h2>
 
                     <div id="step1" class="implementation-step">
-                        <h3>Step 1: Configure Table Grid Data Source</h3>
+                        <h3>Step 1: Configure Jira Data Source</h3>
 
                         <div class="step-table">
                             <div class="step-row">
                                 <div class="step-number-small">1</div>
                                 <div class="step-description">
-                                    <p>Open <strong>Data Sources</strong> tab, click on <strong>Table Grid</strong> source</p>
+                                    <p>Open <strong>Data Sources</strong> tab, click on <strong>Jira</strong> source</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Click <strong>Select</strong> on grid <strong>"Order Burger Demo"</strong></p>
+                                    <p>Configure Jira connection settings if not already connected</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -700,11 +701,17 @@
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>Select dimensions and then click <strong>Save Selected</strong></p>
+                                    <p>Select key dimensions: <strong>Project</strong>, <strong>Issue Type</strong>, <strong>Status</strong>, <strong>Priority</strong>, <strong>Assignee</strong>, and <strong>Created Date</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">5</div>
+                                <div class="step-description">
+                                    <p>Click <strong>Save Selected</strong> to save the dimension configuration</p>
+                                </div>
+                            </div>
+                            <div class="step-row">
+                                <div class="step-number-small">6</div>
                                 <div class="step-description">
                                     <p>Click <strong>Index All Dimensions</strong> button to reindex the data of all selected dimensions, ensuring it is fully up to date.</p>
                                 </div>
@@ -725,27 +732,27 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Enter <strong>"Burger Orders"</strong> for <strong>Data Set Name</strong></p>
+                                    <p>Enter <strong>"Issue Distribution Data"</strong> for <strong>Data Set Name</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>Select <strong>"Table Grid"</strong> in <strong>Select Data Sources</strong> section</p>
+                                    <p>Select <strong>"Jira"</strong> in <strong>Select Data Sources</strong> section</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>In <strong>Select Grid</strong> field, select grid <strong>"Order Burger Demo"</strong></p>
+                                    <p>In <strong>Select Project</strong> field, select <strong>"All Projects"</strong> or specific projects you want to analyze</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">5</div>
                                 <div class="step-description">
-                                    <p>Enter <strong>JQL query</strong> to narrow down the data set that you want:</p>
+                                    <p>Enter <strong>JQL query</strong> to filter the issues you want to analyze:</p>
                                     <div class="code-block">
-                                        <code>key = (HNGTST-33, HNGTST-89, DU2-254, B2-43)</code>
+                                        <code>project in (PROJ1, PROJ2, PROJ3) AND created >= -30d</code>
                                     </div>
                                     <p>Then click <strong>"Run Query"</strong> or <strong>"Preview"</strong> button to filter and preview data in <strong>Data Preview</strong> section</p>
                                 </div>
@@ -760,7 +767,7 @@
                     </div>
 
                     <div id="step3" class="implementation-step">
-                        <h3>Step 3: Configure Revenue Report</h3>
+                        <h3>Step 3: Configure Issue Distribution Report</h3>
 
                         <div class="step-table">
                             <div class="step-row">
@@ -772,13 +779,13 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Fill in <strong>Report Name</strong> and click <strong>Next</strong> button</p>
+                                    <p>Enter <strong>"Issue Distribution by Project and Type"</strong> for <strong>Report Name</strong> and click <strong>Next</strong> button</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">3</div>
                                 <div class="step-description">
-                                    <p>In <strong>Table View</strong> tab, select data set <strong>"Burger Orders"</strong> that we have configured</p>
+                                    <p>In <strong>Table View</strong> tab, select data set <strong>"Issue Distribution Data"</strong> that we have configured</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -790,33 +797,34 @@
                             <div class="step-row">
                                 <div class="step-number-small">5</div>
                                 <div class="step-description">
-                                    <p>Drag dimension <strong>Name</strong> to section <strong>Rows</strong> to view menu item name as row headers</p>
+                                    <p>Drag dimension <strong>Project</strong> to section <strong>Rows</strong> to view project names as row headers</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">6</div>
                                 <div class="step-description">
-                                    <p>Continue to drag dimension <strong>Size</strong> to section <strong>Rows</strong> and below dimension <strong>Name</strong> to view size of each menu item</p>
+                                    <p>Drag dimension <strong>Issue Type</strong> to section <strong>Columns</strong> to view issue types as column headers</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">7</div>
                                 <div class="step-description">
-                                    <p>Drag dimension <strong>Order Type</strong> to dimension <strong>Columns</strong> to view order types as column headers</p>
+                                    <p>Drag dimension <strong>Issue Key</strong> to section <strong>Values</strong> to count issues in each cell</p>
+                                    <p>Select <strong>Count</strong> in <strong>Aggregation</strong> field</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">8</div>
                                 <div class="step-description">
-                                    <p>Drag dimension <strong>Total</strong> to section <strong>Values</strong> to view revenue in each field of the table</p>
-                                    <p>Select <strong>Sum</strong> in <strong>Aggregation</strong> field</p>
+                                    <p>Drag dimension <strong>Status</strong> to dimension <strong>Filters</strong> to filter by specific statuses</p>
+                                    <p>Click on <strong>Status</strong> dimension to select filter conditions like <strong>"Status Is In"</strong> and choose relevant statuses</p>
                                 </div>
                             </div>
                             <div class="step-row">
                                 <div class="step-number-small">9</div>
                                 <div class="step-description">
-                                    <p>Drag dimension <strong>Order at</strong> to dimension <strong>Filters</strong> to filter orders in 2025</p>
-                                    <p>Click on <strong>Order at</strong> dimension to select filter condition <strong>Date Is After</strong> and enter value <strong>"2025-01-01"</strong></p>
+                                    <p>Drag dimension <strong>Created Date</strong> to dimension <strong>Filters</strong> to filter by date range</p>
+                                    <p>Click on <strong>Created Date</strong> dimension to select filter condition <strong>Date Is After</strong> and enter value <strong>"2024-01-01"</strong></p>
                                     <div class="info-box">
                                         <p><strong>📅 Date Format:</strong> Use format <code>YYYY-MM-DD</code></p>
                                     </div>
@@ -825,7 +833,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">10</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Bar Chart</strong> in section <strong>Visualization</strong></p>
+                                    <p>Select <strong>Bar Chart</strong> or <strong>Heatmap</strong> in section <strong>Visualization</strong> for better visual representation</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -844,7 +852,7 @@
                     </div>
 
                     <div id="step4" class="implementation-step">
-                        <h3>Step 4: Add Revenue Report to Jira Dashboard</h3>
+                        <h3>Step 4: Add Issue Distribution Report to Jira Dashboard</h3>
 
                         <div class="step-table">
                             <div class="step-row">
@@ -856,7 +864,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">2</div>
                                 <div class="step-description">
-                                    <p>Fill in <strong>Name</strong> and click <strong>Save</strong></p>
+                                    <p>Enter <strong>"Project Management Dashboard"</strong> for <strong>Name</strong> and click <strong>Save</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -870,7 +878,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">4</div>
                                 <div class="step-description">
-                                    <p>Select <strong>Revenue by Menu Items Report</strong></p>
+                                    <p>Select <strong>Issue Distribution by Project and Type Report</strong></p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -882,7 +890,7 @@
                             <div class="step-row">
                                 <div class="step-number-small">6</div>
                                 <div class="step-description">
-                                    <p>Click <strong>"Change layout"</strong> and select <strong>"One column"</strong></p>
+                                    <p>Click <strong>"Change layout"</strong> and select <strong>"Two columns"</strong> for better visualization</p>
                                 </div>
                             </div>
                             <div class="step-row">
@@ -898,29 +906,30 @@
                         <h3>Step 5: Result</h3>
                         <div class="result-box">
                             <h4>🎉 Success!</h4>
-                            <p>Report is displayed on Jira Dashboard.</p>
-                            <p>You now have a dynamic, real-time sales report that shows revenue breakdown by menu item, filterable by order type and date range.</p>
+                            <p>Issue distribution report is displayed on Jira Dashboard.</p>
+                            <p>You now have a dynamic, real-time report that shows issue distribution across projects and issue types, helping you identify workload patterns and optimize resource allocation.</p>
                         </div>
                     </div>
                 </section>
 
                 <section id="conclusion" class="tutorial-section">
                     <h2>🎯 Conclusion</h2>
-                    <p>By leveraging Visionade and Table Grid, burger restaurant owners can efficiently track sales performance by menu item. This report enables data-driven decision-making, helping businesses optimize pricing strategies, manage inventory effectively, and maximize profitability.</p>
+                    <p>By leveraging Visionade and Jira, project managers can efficiently track issue distribution across projects and issue types. This report enables data-driven decision-making, helping teams identify workload imbalances, optimize resource allocation, and improve project management effectiveness.</p>
 
                     <div class="next-steps">
                         <h4>🚀 Next Steps</h4>
                         <ul>
-                            <li>Explore advanced filtering options to segment your data</li>
-                            <li>Create additional reports for different time periods</li>
-                            <li>Set up automated report scheduling</li>
-                            <li>Share insights with your team through Jira notifications</li>
+                            <li>Create additional reports for different time periods and project combinations</li>
+                            <li>Set up automated report scheduling for regular monitoring</li>
+                            <li>Add priority and assignee dimensions for more detailed analysis</li>
+                            <li>Share insights with stakeholders through Jira notifications</li>
+                            <li>Create trend analysis reports to track distribution changes over time</li>
                         </ul>
                     </div>
 
                     <div class="cta-box">
-                        <h4>Ready to Transform Your Restaurant Data?</h4>
-                        <p>Start your free 30-day trial of Visionade and turn your raw data into actionable insights.</p>
+                        <h4>Ready to Transform Your Project Management Data?</h4>
+                        <p>Start your free 30-day trial of Visionade and turn your Jira data into actionable project insights.</p>
                         <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing"
                            class="cta-button" target="_blank">
                             Get Started Free
@@ -930,7 +939,7 @@
                     <div style="margin-top: 32px; padding: 24px; background: var(--bg-light); border-radius: var(--radius-lg); text-align: center;">
                         <h4 style="color: var(--secondary-color); margin-bottom: 12px;">📚 More Details</h4>
                         <p style="color: var(--text-medium); margin-bottom: 16px;">For additional screenshots, detailed configurations, and troubleshooting tips, visit our comprehensive Confluence documentation.</p>
-                        <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/356679696/Generate+Burger+Restaurant+Sales+by+Menu+Item+Report" 
+                        <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/359366657/Issue+Distribution+by+Project+and+Issue+Type+Report" 
                            target="_blank" 
                            style="display: inline-flex; align-items: center; gap: 8px; color: var(--secondary-color); font-weight: 600; text-decoration: none; padding: 12px 24px; background: white; border: 2px solid var(--primary-color); border-radius: var(--radius-md); transition: all 0.2s ease;">
                             <span>📖 View on Confluence</span>
@@ -1010,7 +1019,7 @@
                 // Track analytics
                 if (typeof trackEvent === 'function') {
                     trackEvent('tutorial_link_copied', {
-                        tutorial: 'burger_restaurant_sales_report'
+                        tutorial: 'issue_distribution_report'
                     });
                 }
             } catch (err) {
@@ -1023,8 +1032,8 @@
             // Track page view
             if (typeof trackEvent === 'function') {
                 trackEvent('tutorial_page_view', {
-                    tutorial: 'burger_restaurant_sales_report',
-                    page_title: 'Generate Burger Restaurant Sales by Menu Item Report'
+                    tutorial: 'issue_distribution_report',
+                    page_title: 'Issue Distribution by Project and Issue Type Report'
                 });
             }
 

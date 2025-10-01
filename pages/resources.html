@@ -93,6 +93,16 @@
             position: relative;
         }
 
+        .template-card {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .template-card:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .template-card:hover {
             border-color: var(--primary-color);
             box-shadow: var(--shadow-md);
@@ -516,40 +526,35 @@
             </div>
 
             <div class="templates-grid">
-                <div class="template-card">
+                <a href="Generate+Burger+Restaurant+Sales+by+Menu+Item+Report.html" 
+                   class="template-card" 
+                   style="text-decoration: none; color: inherit; display: block;">
                     <div class="template-preview">
                         🍔
                         <div class="template-badge">Popular</div>
                     </div>
-                    <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/356679696/Generate+Burger+Restaurant+Sales+by+Menu+Item+Report?atlOrigin=eyJpIjoiYzJiYmYzMmM5ZTQ4NGEwMmJlZTQ4YTU4YTQ3OTI1OTgiLCJwIjoiYyJ9" 
-                    target="_blank" 
-                    style="text-decoration: none; color: inherit;">
-                        <div class="template-info">
-                            <h4>Burger Restaurant Sales Analysis</h4>
-                            <p>Generate reports that summarize sales data categorized by menu item types. Helps managers analyze which items perform well and make data-driven decisions.</p>
-                            <div class="template-tags">
-                                <span class="template-tag">Sales</span>
-                                <span class="template-tag">Category Analysis</span>
-                                <span class="template-tag">Performance</span>
-                            </div>
+                    <div class="template-info">
+                        <h4>Burger Restaurant Sales Analysis</h4>
+                        <p>Generate reports that summarize sales data categorized by menu item types. Helps managers analyze which items perform well and make data-driven decisions.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Sales</span>
+                            <span class="template-tag">Category Analysis</span>
+                            <span class="template-tag">Performance</span>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                </div>
-
-                <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/359366657/Issue+Distribution+by+Project+and+Issue+Type+Report?atlOrigin=eyJpIjoiYzFmY2ZmZmY4NTZhNDIwNGI5ZmE4OGU1ZTU0NWYzMzciLCJwIjoiYyJ9" 
-                    target="_blank" 
-                    style="text-decoration: none; color: inherit;">
-                    <div class="template-card">
-                        <div class="template-preview">📋</div>
-                        <div class="template-info">
-                            <h4>Issue Distribution by Project</h4>
-                            <p>Create reports displaying issue distribution based on project and issue type. Helps project managers track trends and workload distribution.</p>
-                            <div class="template-tags">
-                                <span class="template-tag">Issues</span>
-                                <span class="template-tag">Distribution</span>
-                                <span class="template-tag">Tracking</span>
-                            </div>
+                <a href="Issue+Distribution+by+Project+and+Issue+Type+Report.html" 
+                   class="template-card" 
+                   style="text-decoration: none; color: inherit; display: block;">
+                    <div class="template-preview">📋</div>
+                    <div class="template-info">
+                        <h4>Issue Distribution by Project</h4>
+                        <p>Create reports displaying issue distribution based on project and issue type. Helps project managers track trends and workload distribution.</p>
+                        <div class="template-tags">
+                            <span class="template-tag">Issues</span>
+                            <span class="template-tag">Distribution</span>
+                            <span class="template-tag">Tracking</span>
                         </div>
                     </div>
                 </a>
@@ -619,6 +624,33 @@
                     </div>
                     <div class="tooltip">
                         <span class="tooltip-text">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confluence Links Section -->
+            <div style="margin-top: 48px; padding: 32px; background: var(--bg-light); border-radius: var(--radius-lg);">
+                <h3 style="color: var(--secondary-color); margin-bottom: 24px; text-align: center;">📚 Detailed Tutorials on Confluence</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <div style="background: white; padding: 24px; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+                        <h4 style="color: var(--secondary-color); margin-bottom: 12px;">🍔 Burger Restaurant Sales Analysis</h4>
+                        <p style="color: var(--text-medium); margin-bottom: 16px;">Complete step-by-step tutorial with screenshots and detailed instructions.</p>
+                        <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/356679696/Generate+Burger+Restaurant+Sales+by+Menu+Item+Report" 
+                           target="_blank" 
+                           style="display: inline-flex; align-items: center; gap: 8px; color: var(--secondary-color); font-weight: 600; text-decoration: none;">
+                            <span>📖 View on Confluence</span>
+                            <span style="font-size: 0.8rem;">↗</span>
+                        </a>
+                    </div>
+                    <div style="background: white; padding: 24px; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+                        <h4 style="color: var(--secondary-color); margin-bottom: 12px;">📋 Issue Distribution by Project</h4>
+                        <p style="color: var(--text-medium); margin-bottom: 16px;">Learn how to create comprehensive issue distribution reports across projects and issue types.</p>
+                        <a href="https://tablegrid.atlassian.net/wiki/spaces/Visionade/pages/359366657/Issue+Distribution+by+Project+and+Issue+Type+Report" 
+                           target="_blank" 
+                           style="display: inline-flex; align-items: center; gap: 8px; color: var(--secondary-color); font-weight: 600; text-decoration: none;">
+                            <span>📖 View on Confluence</span>
+                            <span style="font-size: 0.8rem;">↗</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1120,6 +1152,17 @@
 
         document.querySelectorAll('.stat-card').forEach(card => {
             statsObserver.observe(card);
+        });
+
+        // Ensure template cards are clickable
+        document.querySelectorAll('.template-card a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
         });
     </script>
 </body>
