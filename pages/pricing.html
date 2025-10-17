@@ -20,9 +20,11 @@
 
     <style>
         .pricing-hero {
-            padding: 64px 0;
-            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            padding: var(--space-xxxl) 0;
+            background: #ffe528;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .pricing-grid {
@@ -133,8 +135,8 @@
         }
 
         .trial-banner {
-            background: var(--secondary-color);
-            color: white;
+            background: white;
+            color: var(--text-dark);
             padding: 48px 0;
             text-align: center;
         }
@@ -203,16 +205,26 @@
 
     <!-- Pricing Hero -->
     <section class="pricing-hero">
-        <div class="container">
-            <h1>Simple, Transparent Pricing</h1>
-            <p class="subtitle"><strong>$5/month</strong> gets you custom Jira reports, dashboards, and charts. Start your free 30-day trial today.</p>
+        <!-- Hero pattern background - Left edge -->
+        <div style="position: absolute; top: 0; left: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: left;">
+        </div>
+        
+        <!-- Hero pattern background - Right edge -->
+        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: right;">
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1 style="color: #2f372e;">Simple, Transparent Pricing</h1>
+            <p class="subtitle" style="color: #2f372e;"><strong>$5/month</strong> gets you custom Jira reports, dashboards, and charts. Start your free 30-day trial today.</p>
         </div>
     </section>
 
     <!-- Free Trial Banner -->
     <section class="trial-banner">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 16px;">Start Your Free 30-Day Trial Today</h2>
+            <h2 style="color: var(--text-dark); margin-bottom: 16px;">Start Your Free 30-Day Trial Today</h2>
             <div class="trial-features">
                 <div class="trial-feature">
                     <span>✓</span>
@@ -231,16 +243,16 @@
     </section>
 
     <!-- Pricing Section -->
-    <section style="padding: 32px 0 64px 0; background-color: var(--secondary-color);">
+    <section style="padding: 32px 0 64px 0; background-color: white;">
         <div class="container">
             <div style="max-width: 600px; margin: 0 auto; text-align: center;">
                 <div class="pricing-card featured" style="margin: 0 auto;">
-                    <div class="pricing-tier">Visionade</div>
-                    <div class="pricing-price">$5</div>
-                    <div class="pricing-period">per month</div>
+                    <div class="pricing-tier" style="color: var(--text-dark);">Visionade</div>
+                    <div class="pricing-price" style="color: var(--text-dark);">$5</div>
+                    <div class="pricing-period" style="color: var(--text-dark);">per month</div>
                     <p style="margin-bottom: 24px; color: var(--text-medium);">Complete data analysis toolkit for Jira</p>
 
-                    <ul class="pricing-features" style="text-align: left;">
+                    <ul class="pricing-features" style="text-align: left; color: var(--text-dark);">
                         <li>Custom Jira reports with sum, average, count, min/max</li>
                         <li>Multi-dimensional analysis with custom charts</li>
                         <li>Bar, column, pie, and line chart types</li>
@@ -256,7 +268,7 @@
                     </a>
                 </div>
 
-                <p style="margin-top: 32px; color: white; font-size: 0.9rem;">
+                <p style="margin-top: 32px; color: var(--text-dark); font-size: 0.9rem;">
                     Pricing is managed through the <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira" target="_blank" style="color: var(--primary-color);">Atlassian Marketplace</a>
                 </p>
             </div>
@@ -264,11 +276,11 @@
     </section>
 
     <!-- Use Cases -->
-    <section style="padding: 64px 0; background: var(--bg-light);">
+    <section style="padding: 64px 0; background: var(--secondary-color);">
         <div class="container">
             <div class="section-header">
-                <h2>Popular Use Cases</h2>
-                <p>See how teams use Visionade to make data-driven decisions</p>
+                <h2 style="color: white;">Popular Use Cases</h2>
+                <p style="color: white;">See how teams use Visionade to make data-driven decisions</p>
             </div>
 
             <div style="margin-top: 32px;">
@@ -327,17 +339,17 @@
     </section>
 
     <!-- CTA Section -->
-    <section style="padding: 64px 0; background: var(--secondary-color); text-align: center; color: white;">
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #2f372e 0%, #1a1f1a 100%); text-align: center; color: white;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 16px;">Data Stirred. Not Scrambled.</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start creating custom Jira reports and dashboards today for just $5/month.</p>
+            <h2 style="color: #FFD700; margin-bottom: 16px; font-weight: 700;">Data Stirred. Not Scrambled.</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start your free trial today and see the difference Visionade can make for your team.</p>
 
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn" style="background: white; color: var(--secondary-color); font-weight: 600;" target="_blank" rel="noopener">
-                    Start Free 30-Day Trial
+                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn" style="background: #FFD700; color: var(--secondary-color); font-weight: 600; border: 2px solid #FFD700;" target="_blank" rel="noopener">
+                    Start Free Trial - $5/month
                 </a>
-                <a href="../index.html" class="btn" style="background: transparent; color: white; border: 2px solid white;">
-                    Learn More
+                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira" class="btn" style="background: transparent; color: white; border: 2px solid white;" target="_blank">
+                    View on Marketplace
                 </a>
             </div>
 

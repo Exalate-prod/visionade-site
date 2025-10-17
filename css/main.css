@@ -11,7 +11,7 @@
 :root {
     /* Official Visionade Brand Colors */
     --primary-color: #FFE528; /* Citrus Spark */
-    --secondary-color: #2F372E; /* Verdant Depth */
+    --secondary-color: #1a1f1a; /* Dark Grey */
     --accent-color: #B7A894; /* Golden Sand */
     --tertiary-color: #E3CDA3; /* Sunny Wheat */
     --dark-color: #23120E; /* Espresso Edge */
@@ -352,7 +352,7 @@ a.yellow-link:hover {
 /* Feature Grid */
 .features {
     padding: var(--space-xxxl) 0;
-    background: linear-gradient(135deg, var(--bg-white) 0%, var(--tertiary-color) 100%);
+    background: linear-gradient(135deg, #2f372e 0%, #1a1f1a 100%);
 }
 
 .features-grid {
@@ -462,8 +462,8 @@ a.yellow-link:hover {
 
 /* Footer */
 .footer {
-    background: var(--secondary-color);
-    color: white;
+    background: linear-gradient(135deg, #2f372e 0%, #1a1f1a 100%);
+    color: var(--primary-color);
     padding: var(--space-xxxl) 0 var(--space-xl);
 }
 
@@ -476,24 +476,25 @@ a.yellow-link:hover {
 
 .footer-section h4 {
     margin-bottom: var(--space-md);
-    color: white;
+    color: var(--primary-color);
 }
 
 .footer-section a {
-    color: var(--text-light);
+    color: var(--primary-color);
     display: block;
     margin-bottom: var(--space-sm);
 }
 
 .footer-section a:hover {
-    color: white;
+    color: var(--primary-color);
+    opacity: 0.8;
 }
 
 .footer-bottom {
     border-top: 1px solid #344563;
     padding-top: var(--space-lg);
     text-align: center;
-    color: var(--text-light);
+    color: var(--primary-color);
 }
 
 /* Mobile Navigation */

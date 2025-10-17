@@ -20,9 +20,11 @@
 
     <style>
         .how-it-works-hero {
-            padding: 64px 0;
-            background: linear-gradient(135deg, #f8faff 0%, #e6f2ff 100%);
+            padding: var(--space-xxxl) 0;
+            background: #ffe528;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .process-timeline {
@@ -86,8 +88,8 @@
             transform: translate(-50%, -50%);
             width: 60px;
             height: 60px;
-            background: #2f372e;
-            color: white;
+            background: #ffe528;
+            color: #000000;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -344,9 +346,19 @@
 
     <!-- Hero Section -->
     <section class="how-it-works-hero">
-        <div class="container">
-            <h1>From Data to Dashboard in 5 Simple Steps</h1>
-            <p class="subtitle">See how easy it is to create custom Jira reports and dashboards with Visionade's drag-and-drop interface</p>
+        <!-- Hero pattern background - Left edge -->
+        <div style="position: absolute; top: 0; left: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: left;">
+        </div>
+        
+        <!-- Hero pattern background - Right edge -->
+        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: right;">
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1 style="color: #2f372e;">From Data to Dashboard in 5 Simple Steps</h1>
+            <p class="subtitle" style="color: #2f372e;">See how easy it is to create custom Jira reports and dashboards with Visionade's drag-and-drop interface</p>
         </div>
     </section>
 
@@ -522,16 +534,26 @@
     </section>
 
     <!-- CTA Section -->
-    <section style="padding: 64px 0; background: var(--secondary-color); text-align: center; color: white;">
-        <div class="container">
-            <h2 style="color: white; margin-bottom: 16px;">Ready to See It in Action?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 32px; color: rgba(255,255,255,0.9);">Start your free trial today and create your first custom report in under 10 minutes.</p>
+    <section style="padding: 64px 0; background: linear-gradient(135deg, #2f372e 0%, #1a1f1a 100%); text-align: center; position: relative; overflow: hidden;">
+        <!-- Hero pattern background - Left edge -->
+        <div style="position: absolute; top: 0; left: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: left;">
+        </div>
+        
+        <!-- Hero pattern background - Right edge -->
+        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; z-index: 0; opacity: 0.6;">
+            <img src="../assets/icons/PNG/Visionade-Website_Hero-pattern.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: right;">
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 style="color: #ffe528 !important; margin-bottom: 16px;">Ready to See It in Action?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 32px; color: white !important;">Start your free trial today and create your first custom report in under 10 minutes.</p>
 
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn" style="background: white; color: var(--secondary-color); font-weight: 600;" target="_blank" rel="noopener">
-                    Start Free Trial
+                <a href="https://marketplace.atlassian.com/apps/1237140/visionade-reports-dashboards-graphs-and-charts-for-jira?hosting=cloud&tab=pricing" class="btn" style="background: #FFD700; color: var(--secondary-color); font-weight: 600; border: 2px solid #FFD700;" target="_blank" rel="noopener">
+                    Start Free Trial - $5/month
                 </a>
-                <a href="resources.html#video-tutorials" class="btn" style="background: transparent; color: white; border: 2px solid white;">
+                <a href="resources.html#video-tutorials" class="btn" style="background: transparent !important; color: white !important; border: 2px solid white !important;">
                     Learn More
                 </a>
             </div>
